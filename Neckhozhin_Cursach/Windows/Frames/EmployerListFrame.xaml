@@ -1,0 +1,39 @@
+﻿<Page x:Class="Neckhozhin_Cursach.Windows.Frames.EmployerListFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Neckhozhin_Cursach.Windows.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="689" d:DesignWidth="909"
+      Title="MenuFrame">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Test Emploee" Style="{StaticResource TextBlTitleStyle}" Margin="10 0"/>
+        <StackPanel Grid.Row="2" VerticalAlignment="Center" Orientation="Horizontal">
+            <TextBlock Text="TestRows" Foreground="White" Margin="10 0"/>
+            <TextBox x:Name="RowTest" Width="250"/> 
+        </StackPanel>
+        <Button x:Name="CreatorTest" Grid.Row="3" Click="CreatorTest_Click" Style="{StaticResource SystemButtonStyle}" Content="Test" Margin="50"/>
+        <ListView x:Name="EmployerLV" Grid.Column="1" Grid.RowSpan="4">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Surname_E}" Header="Фамилия"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Name_E}" Header="Имя"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Patronymic_e}" Header="Отчество"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Positions.Name_P}" Header="Должность"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

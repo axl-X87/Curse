@@ -1,0 +1,55 @@
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.exe.config
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.exe
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.pdb
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\MainWindow.g.cs
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\App.g.cs
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach_MarkupCompile.cache
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach_MarkupCompile.lref
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\MainWindow.baml
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.g.resources
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.Properties.Resources.resources
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.GenerateResource.cache
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.CoreCompileInputs.cache
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.exe
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.pdb
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\App.baml
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.AssemblyReference.cache
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\LoginFrame.g.cs
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\LoginFrame.baml
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\MenuFrame.g.cs
+O:\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\MenuFrame.baml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.exe.config
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.exe
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.pdb
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.AssemblyReference.cache
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.SuggestedBindingRedirects.cache
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\MainWindow.g.cs
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\App.g.cs
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach_MarkupCompile.cache
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach_MarkupCompile.lref
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\App.baml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\MainWindow.baml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.g.resources
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.Properties.Resources.resources
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.GenerateResource.cache
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.CoreCompileInputs.cache
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.exe
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.pdb
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\AddEmployerFrame.g.cs
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\EmployerListFrame.g.cs
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\AddEmployerFrame.baml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\EmployerListFrame.baml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\LoginFrame.g.cs
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\LoginFrame.baml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach_Content.g.cs
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\EntityFramework.dll
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\EntityFramework.xml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.CopyComplete
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\OrderCompositionFrame.g.cs
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\OrderCompositionFrame.baml
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Employer.g.cs
+C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Employer.baml

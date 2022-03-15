@@ -1,0 +1,1025 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище Perfomance_ArtistModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Costumables">
+          <Key>
+            <PropertyRef Name="id_C" />
+          </Key>
+          <Property Name="id_C" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_C" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Material_C" Type="nvarchar" MaxLength="30" />
+          <Property Name="Volume_Amount_C" Type="nvarchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="Costumables_Warehouse">
+          <Key>
+            <PropertyRef Name="id_W" />
+          </Key>
+          <Property Name="id_W" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_" Type="int" />
+          <Property Name="Reminder_C" Type="int" />
+        </EntityType>
+        <EntityType Name="Employers">
+          <Key>
+            <PropertyRef Name="id_E" />
+          </Key>
+          <Property Name="id_E" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Surname_E" Type="nvarchar" MaxLength="20" />
+          <Property Name="Name_E" Type="nvarchar" MaxLength="20" />
+          <Property Name="Patronymic_e" Type="nvarchar" MaxLength="20" />
+          <Property Name="Position_E" Type="int" />
+        </EntityType>
+        <EntityType Name="Master_">
+          <Key>
+            <PropertyRef Name="id_M" />
+          </Key>
+          <Property Name="id_M" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_E" Type="int" />
+          <Property Name="Expirience_M" Type="int" />
+        </EntityType>
+        <EntityType Name="Order_">
+          <Key>
+            <PropertyRef Name="id_O" />
+          </Key>
+          <Property Name="id_O" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Product" Type="int" />
+          <Property Name="Paint" Type="int" />
+          <Property Name="Master_" Type="int" />
+          <Property Name="Amount_Product" Type="int" />
+          <Property Name="Total_Area" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Order_by_Shift">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_WS" Type="int" />
+          <Property Name="id_O" Type="int" />
+        </EntityType>
+        <EntityType Name="Paint">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_Color_P" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="ISO_P" Type="nvarchar" MaxLength="10" />
+          <Property Name="Manufacter" Type="nvarchar" MaxLength="30" />
+        </EntityType>
+        <EntityType Name="Paint_Warehouse">
+          <Key>
+            <PropertyRef Name="id_W" />
+          </Key>
+          <Property Name="id_W" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_" Type="int" />
+          <Property Name="Reminder_P" Type="int" />
+        </EntityType>
+        <EntityType Name="Positions">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_P" Type="varchar" MaxLength="30" />
+          <Property Name="Schedule_P" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name_P" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="Sizes_l_w_h_P" Type="nvarchar" MaxLength="30" />
+          <Property Name="Thickness_P" Type="nvarchar" MaxLength="6" />
+          <Property Name="Size_P" Type="nvarchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Products_Warehouse">
+          <Key>
+            <PropertyRef Name="id_W" />
+          </Key>
+          <Property Name="id_W" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Id_" Type="int" />
+          <Property Name="Reminder_P" Type="int" />
+        </EntityType>
+        <EntityType Name="Shift_Composition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_WS" Type="int" />
+          <Property Name="id_E" Type="int" />
+        </EntityType>
+        <EntityType Name="Shift_Costumables">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id_WS" Type="int" />
+          <Property Name="id_C" Type="int" />
+        </EntityType>
+        <EntityType Name="User_App">
+          <Key>
+            <PropertyRef Name="id_U" />
+          </Key>
+          <Property Name="id_U" Type="int" Nullable="false" />
+          <Property Name="id_E" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="20" />
+          <Property Name="UserPassword" Type="nvarchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="Work_Shift">
+          <Key>
+            <PropertyRef Name="id_WS" />
+          </Key>
+          <Property Name="id_WS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date_WS" Type="date" />
+          <Property Name="Master_" Type="int" />
+        </EntityType>
+        <Association Name="FK__Costumables__Id___60A75C0F">
+          <End Role="Costumables" Type="Self.Costumables" Multiplicity="0..1" />
+          <End Role="Costumables_Warehouse" Type="Self.Costumables_Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Costumables">
+              <PropertyRef Name="id_C" />
+            </Principal>
+            <Dependent Role="Costumables_Warehouse">
+              <PropertyRef Name="Id_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employers__Posit__52593CB8">
+          <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
+          <End Role="Employers" Type="Self.Employers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positions">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Employers">
+              <PropertyRef Name="Position_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Master___id_E__5535A963">
+          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
+          <End Role="Master_" Type="Self.Master_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employers">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="Master_">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order___Master___68487DD7">
+          <End Role="Master_" Type="Self.Master_" Multiplicity="0..1" />
+          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master_">
+              <PropertyRef Name="id_M" />
+            </Principal>
+            <Dependent Role="Order_">
+              <PropertyRef Name="Master_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order___Paint__6754599E">
+          <End Role="Paint" Type="Self.Paint" Multiplicity="0..1" />
+          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paint">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Order_">
+              <PropertyRef Name="Paint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order___Product__66603565">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Order_">
+              <PropertyRef Name="Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_by___id_WS__75A278F5">
+          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
+          <End Role="Order_by_Shift" Type="Self.Order_by_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Shift">
+              <PropertyRef Name="id_WS" />
+            </Principal>
+            <Dependent Role="Order_by_Shift">
+              <PropertyRef Name="id_WS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_by_S__id_O__76969D2E">
+          <End Role="Order_" Type="Self.Order_" Multiplicity="0..1" />
+          <End Role="Order_by_Shift" Type="Self.Order_by_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_">
+              <PropertyRef Name="id_O" />
+            </Principal>
+            <Dependent Role="Order_by_Shift">
+              <PropertyRef Name="id_O" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Paint_Wareh__Id___6383C8BA">
+          <End Role="Paint" Type="Self.Paint" Multiplicity="0..1" />
+          <End Role="Paint_Warehouse" Type="Self.Paint_Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paint">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Paint_Warehouse">
+              <PropertyRef Name="Id_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products_Wa__Id___5DCAEF64">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Products_Warehouse" Type="Self.Products_Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Products_Warehouse">
+              <PropertyRef Name="Id_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_Com__id_WS__71D1E811">
+          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
+          <End Role="Shift_Composition" Type="Self.Shift_Composition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Shift">
+              <PropertyRef Name="id_WS" />
+            </Principal>
+            <Dependent Role="Shift_Composition">
+              <PropertyRef Name="id_WS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_Comp__id_E__72C60C4A">
+          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
+          <End Role="Shift_Composition" Type="Self.Shift_Composition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employers">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="Shift_Composition">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_Cos__id_WS__6E01572D">
+          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
+          <End Role="Shift_Costumables" Type="Self.Shift_Costumables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Shift">
+              <PropertyRef Name="id_WS" />
+            </Principal>
+            <Dependent Role="Shift_Costumables">
+              <PropertyRef Name="id_WS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_Cost__id_C__6EF57B66">
+          <End Role="Costumables" Type="Self.Costumables" Multiplicity="0..1" />
+          <End Role="Shift_Costumables" Type="Self.Shift_Costumables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Costumables">
+              <PropertyRef Name="id_C" />
+            </Principal>
+            <Dependent Role="Shift_Costumables">
+              <PropertyRef Name="id_C" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_App__id_E__7C4F7684">
+          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
+          <End Role="User_App" Type="Self.User_App" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employers">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="User_App">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Work_Shif__Maste__6B24EA82">
+          <End Role="Master_" Type="Self.Master_" Multiplicity="0..1" />
+          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master_">
+              <PropertyRef Name="id_M" />
+            </Principal>
+            <Dependent Role="Work_Shift">
+              <PropertyRef Name="Master_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище Perfomance_ArtistModelContainer">
+          <EntitySet Name="Costumables" EntityType="Self.Costumables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Costumables_Warehouse" EntityType="Self.Costumables_Warehouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employers" EntityType="Self.Employers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Master_" EntityType="Self.Master_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_" EntityType="Self.Order_" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Order_by_Shift" EntityType="Self.Order_by_Shift" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paint" EntityType="Self.Paint" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Paint_Warehouse" EntityType="Self.Paint_Warehouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Products_Warehouse" EntityType="Self.Products_Warehouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shift_Composition" EntityType="Self.Shift_Composition" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Shift_Costumables" EntityType="Self.Shift_Costumables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User_App" EntityType="Self.User_App" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Work_Shift" EntityType="Self.Work_Shift" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Costumables__Id___60A75C0F" Association="Self.FK__Costumables__Id___60A75C0F">
+            <End Role="Costumables" EntitySet="Costumables" />
+            <End Role="Costumables_Warehouse" EntitySet="Costumables_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employers__Posit__52593CB8" Association="Self.FK__Employers__Posit__52593CB8">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="Employers" EntitySet="Employers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Master___id_E__5535A963" Association="Self.FK__Master___id_E__5535A963">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="Master_" EntitySet="Master_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Master___68487DD7" Association="Self.FK__Order___Master___68487DD7">
+            <End Role="Master_" EntitySet="Master_" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Paint__6754599E" Association="Self.FK__Order___Paint__6754599E">
+            <End Role="Paint" EntitySet="Paint" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Product__66603565" Association="Self.FK__Order___Product__66603565">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_by___id_WS__75A278F5" Association="Self.FK__Order_by___id_WS__75A278F5">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="Order_by_Shift" EntitySet="Order_by_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_by_S__id_O__76969D2E" Association="Self.FK__Order_by_S__id_O__76969D2E">
+            <End Role="Order_" EntitySet="Order_" />
+            <End Role="Order_by_Shift" EntitySet="Order_by_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Paint_Wareh__Id___6383C8BA" Association="Self.FK__Paint_Wareh__Id___6383C8BA">
+            <End Role="Paint" EntitySet="Paint" />
+            <End Role="Paint_Warehouse" EntitySet="Paint_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products_Wa__Id___5DCAEF64" Association="Self.FK__Products_Wa__Id___5DCAEF64">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Products_Warehouse" EntitySet="Products_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Com__id_WS__71D1E811" Association="Self.FK__Shift_Com__id_WS__71D1E811">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="Shift_Composition" EntitySet="Shift_Composition" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Comp__id_E__72C60C4A" Association="Self.FK__Shift_Comp__id_E__72C60C4A">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="Shift_Composition" EntitySet="Shift_Composition" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Cos__id_WS__6E01572D" Association="Self.FK__Shift_Cos__id_WS__6E01572D">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Cost__id_C__6EF57B66" Association="Self.FK__Shift_Cost__id_C__6EF57B66">
+            <End Role="Costumables" EntitySet="Costumables" />
+            <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_App__id_E__7C4F7684" Association="Self.FK__User_App__id_E__7C4F7684">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="User_App" EntitySet="User_App" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Work_Shif__Maste__6B24EA82" Association="Self.FK__Work_Shif__Maste__6B24EA82">
+            <End Role="Master_" EntitySet="Master_" />
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Perfomance_ArtistModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Costumables">
+          <Key>
+            <PropertyRef Name="id_C" />
+          </Key>
+          <Property Name="id_C" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_C" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Material_C" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Volume_Amount_C" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Costumables_Warehouse" Relationship="Self.FK__Costumables__Id___60A75C0F" FromRole="Costumables" ToRole="Costumables_Warehouse" />
+          <NavigationProperty Name="Shift_Costumables" Relationship="Self.FK__Shift_Cost__id_C__6EF57B66" FromRole="Costumables" ToRole="Shift_Costumables" />
+        </EntityType>
+        <EntityType Name="Costumables_Warehouse">
+          <Key>
+            <PropertyRef Name="id_W" />
+          </Key>
+          <Property Name="id_W" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_" Type="Int32" />
+          <Property Name="Reminder_C" Type="Int32" />
+          <NavigationProperty Name="Costumables" Relationship="Self.FK__Costumables__Id___60A75C0F" FromRole="Costumables_Warehouse" ToRole="Costumables" />
+        </EntityType>
+        <EntityType Name="Employers">
+          <Key>
+            <PropertyRef Name="id_E" />
+          </Key>
+          <Property Name="id_E" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Surname_E" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Name_E" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic_e" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Position_E" Type="Int32" />
+          <NavigationProperty Name="Positions" Relationship="Self.FK__Employers__Posit__52593CB8" FromRole="Employers" ToRole="Positions" />
+          <NavigationProperty Name="Master_" Relationship="Self.FK__Master___id_E__5535A963" FromRole="Employers" ToRole="Master_" />
+          <NavigationProperty Name="Shift_Composition" Relationship="Self.FK__Shift_Comp__id_E__72C60C4A" FromRole="Employers" ToRole="Shift_Composition" />
+          <NavigationProperty Name="User_App" Relationship="Self.FK__User_App__id_E__7C4F7684" FromRole="Employers" ToRole="User_App" />
+        </EntityType>
+        <EntityType Name="Master_">
+          <Key>
+            <PropertyRef Name="id_M" />
+          </Key>
+          <Property Name="id_M" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_E" Type="Int32" />
+          <Property Name="Expirience_M" Type="Int32" />
+          <NavigationProperty Name="Employers" Relationship="Self.FK__Master___id_E__5535A963" FromRole="Master_" ToRole="Employers" />
+          <NavigationProperty Name="Order_" Relationship="Self.FK__Order___Master___68487DD7" FromRole="Master_" ToRole="Order_" />
+          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Work_Shif__Maste__6B24EA82" FromRole="Master_" ToRole="Work_Shift" />
+        </EntityType>
+        <EntityType Name="Order_">
+          <Key>
+            <PropertyRef Name="id_O" />
+          </Key>
+          <Property Name="id_O" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Product" Type="Int32" />
+          <Property Name="Paint" Type="Int32" />
+          <Property Name="Master_" Type="Int32" />
+          <Property Name="Amount_Product" Type="Int32" />
+          <Property Name="Total_Area" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Master_1" Relationship="Self.FK__Order___Master___68487DD7" FromRole="Order_" ToRole="Master_" />
+          <NavigationProperty Name="Paint1" Relationship="Self.FK__Order___Paint__6754599E" FromRole="Order_" ToRole="Paint" />
+          <NavigationProperty Name="Product1" Relationship="Self.FK__Order___Product__66603565" FromRole="Order_" ToRole="Product" />
+          <NavigationProperty Name="Order_by_Shift" Relationship="Self.FK__Order_by_S__id_O__76969D2E" FromRole="Order_" ToRole="Order_by_Shift" />
+        </EntityType>
+        <EntityType Name="Order_by_Shift">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_WS" Type="Int32" />
+          <Property Name="id_O" Type="Int32" />
+          <NavigationProperty Name="Order_" Relationship="Self.FK__Order_by_S__id_O__76969D2E" FromRole="Order_by_Shift" ToRole="Order_" />
+          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Order_by___id_WS__75A278F5" FromRole="Order_by_Shift" ToRole="Work_Shift" />
+        </EntityType>
+        <EntityType Name="Paint">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_Color_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ISO_P" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Manufacter" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order_" Relationship="Self.FK__Order___Paint__6754599E" FromRole="Paint" ToRole="Order_" />
+          <NavigationProperty Name="Paint_Warehouse" Relationship="Self.FK__Paint_Wareh__Id___6383C8BA" FromRole="Paint" ToRole="Paint_Warehouse" />
+        </EntityType>
+        <EntityType Name="Paint_Warehouse">
+          <Key>
+            <PropertyRef Name="id_W" />
+          </Key>
+          <Property Name="id_W" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_" Type="Int32" />
+          <Property Name="Reminder_P" Type="Int32" />
+          <NavigationProperty Name="Paint" Relationship="Self.FK__Paint_Wareh__Id___6383C8BA" FromRole="Paint_Warehouse" ToRole="Paint" />
+        </EntityType>
+        <EntityType Name="Positions">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_P" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Schedule_P" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employers" Relationship="Self.FK__Employers__Posit__52593CB8" FromRole="Positions" ToRole="Employers" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="id_P" />
+          </Key>
+          <Property Name="id_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Sizes_l_w_h_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="Thickness_P" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <Property Name="Size_P" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Order_" Relationship="Self.FK__Order___Product__66603565" FromRole="Product" ToRole="Order_" />
+          <NavigationProperty Name="Products_Warehouse" Relationship="Self.FK__Products_Wa__Id___5DCAEF64" FromRole="Product" ToRole="Products_Warehouse" />
+        </EntityType>
+        <EntityType Name="Products_Warehouse">
+          <Key>
+            <PropertyRef Name="id_W" />
+          </Key>
+          <Property Name="id_W" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Id_" Type="Int32" />
+          <Property Name="Reminder_P" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="Self.FK__Products_Wa__Id___5DCAEF64" FromRole="Products_Warehouse" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Shift_Composition">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_WS" Type="Int32" />
+          <Property Name="id_E" Type="Int32" />
+          <NavigationProperty Name="Employers" Relationship="Self.FK__Shift_Comp__id_E__72C60C4A" FromRole="Shift_Composition" ToRole="Employers" />
+          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Shift_Com__id_WS__71D1E811" FromRole="Shift_Composition" ToRole="Work_Shift" />
+        </EntityType>
+        <EntityType Name="Shift_Costumables">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="id_WS" Type="Int32" />
+          <Property Name="id_C" Type="Int32" />
+          <NavigationProperty Name="Costumables" Relationship="Self.FK__Shift_Cost__id_C__6EF57B66" FromRole="Shift_Costumables" ToRole="Costumables" />
+          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Shift_Cos__id_WS__6E01572D" FromRole="Shift_Costumables" ToRole="Work_Shift" />
+        </EntityType>
+        <EntityType Name="User_App">
+          <Key>
+            <PropertyRef Name="id_U" />
+          </Key>
+          <Property Name="id_U" Type="Int32" Nullable="false" />
+          <Property Name="id_E" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UserPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employers" Relationship="Self.FK__User_App__id_E__7C4F7684" FromRole="User_App" ToRole="Employers" />
+        </EntityType>
+        <EntityType Name="Work_Shift">
+          <Key>
+            <PropertyRef Name="id_WS" />
+          </Key>
+          <Property Name="id_WS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date_WS" Type="DateTime" Precision="0" />
+          <Property Name="Master_" Type="Int32" />
+          <NavigationProperty Name="Master_1" Relationship="Self.FK__Work_Shif__Maste__6B24EA82" FromRole="Work_Shift" ToRole="Master_" />
+          <NavigationProperty Name="Order_by_Shift" Relationship="Self.FK__Order_by___id_WS__75A278F5" FromRole="Work_Shift" ToRole="Order_by_Shift" />
+          <NavigationProperty Name="Shift_Composition" Relationship="Self.FK__Shift_Com__id_WS__71D1E811" FromRole="Work_Shift" ToRole="Shift_Composition" />
+          <NavigationProperty Name="Shift_Costumables" Relationship="Self.FK__Shift_Cos__id_WS__6E01572D" FromRole="Work_Shift" ToRole="Shift_Costumables" />
+        </EntityType>
+        <Association Name="FK__Costumables__Id___60A75C0F">
+          <End Role="Costumables" Type="Self.Costumables" Multiplicity="0..1" />
+          <End Role="Costumables_Warehouse" Type="Self.Costumables_Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Costumables">
+              <PropertyRef Name="id_C" />
+            </Principal>
+            <Dependent Role="Costumables_Warehouse">
+              <PropertyRef Name="Id_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_Cost__id_C__6EF57B66">
+          <End Role="Costumables" Type="Self.Costumables" Multiplicity="0..1" />
+          <End Role="Shift_Costumables" Type="Self.Shift_Costumables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Costumables">
+              <PropertyRef Name="id_C" />
+            </Principal>
+            <Dependent Role="Shift_Costumables">
+              <PropertyRef Name="id_C" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Employers__Posit__52593CB8">
+          <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
+          <End Role="Employers" Type="Self.Employers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Positions">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Employers">
+              <PropertyRef Name="Position_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Master___id_E__5535A963">
+          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
+          <End Role="Master_" Type="Self.Master_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employers">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="Master_">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_Comp__id_E__72C60C4A">
+          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
+          <End Role="Shift_Composition" Type="Self.Shift_Composition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employers">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="Shift_Composition">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__User_App__id_E__7C4F7684">
+          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
+          <End Role="User_App" Type="Self.User_App" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employers">
+              <PropertyRef Name="id_E" />
+            </Principal>
+            <Dependent Role="User_App">
+              <PropertyRef Name="id_E" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order___Master___68487DD7">
+          <End Role="Master_" Type="Self.Master_" Multiplicity="0..1" />
+          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master_">
+              <PropertyRef Name="id_M" />
+            </Principal>
+            <Dependent Role="Order_">
+              <PropertyRef Name="Master_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Work_Shif__Maste__6B24EA82">
+          <End Role="Master_" Type="Self.Master_" Multiplicity="0..1" />
+          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Master_">
+              <PropertyRef Name="id_M" />
+            </Principal>
+            <Dependent Role="Work_Shift">
+              <PropertyRef Name="Master_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order___Paint__6754599E">
+          <End Role="Paint" Type="Self.Paint" Multiplicity="0..1" />
+          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paint">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Order_">
+              <PropertyRef Name="Paint" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order___Product__66603565">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Order_">
+              <PropertyRef Name="Product" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_by_S__id_O__76969D2E">
+          <End Role="Order_" Type="Self.Order_" Multiplicity="0..1" />
+          <End Role="Order_by_Shift" Type="Self.Order_by_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order_">
+              <PropertyRef Name="id_O" />
+            </Principal>
+            <Dependent Role="Order_by_Shift">
+              <PropertyRef Name="id_O" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Order_by___id_WS__75A278F5">
+          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
+          <End Role="Order_by_Shift" Type="Self.Order_by_Shift" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Shift">
+              <PropertyRef Name="id_WS" />
+            </Principal>
+            <Dependent Role="Order_by_Shift">
+              <PropertyRef Name="id_WS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Paint_Wareh__Id___6383C8BA">
+          <End Role="Paint" Type="Self.Paint" Multiplicity="0..1" />
+          <End Role="Paint_Warehouse" Type="Self.Paint_Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paint">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Paint_Warehouse">
+              <PropertyRef Name="Id_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Products_Wa__Id___5DCAEF64">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Products_Warehouse" Type="Self.Products_Warehouse" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Products_Warehouse">
+              <PropertyRef Name="Id_" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_Com__id_WS__71D1E811">
+          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
+          <End Role="Shift_Composition" Type="Self.Shift_Composition" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Shift">
+              <PropertyRef Name="id_WS" />
+            </Principal>
+            <Dependent Role="Shift_Composition">
+              <PropertyRef Name="id_WS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Shift_Cos__id_WS__6E01572D">
+          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
+          <End Role="Shift_Costumables" Type="Self.Shift_Costumables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Work_Shift">
+              <PropertyRef Name="id_WS" />
+            </Principal>
+            <Dependent Role="Shift_Costumables">
+              <PropertyRef Name="id_WS" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Perfomance_ArtistEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Costumables" EntityType="Self.Costumables" />
+          <EntitySet Name="Costumables_Warehouse" EntityType="Self.Costumables_Warehouse" />
+          <EntitySet Name="Employers" EntityType="Self.Employers" />
+          <EntitySet Name="Master_" EntityType="Self.Master_" />
+          <EntitySet Name="Order_" EntityType="Self.Order_" />
+          <EntitySet Name="Order_by_Shift" EntityType="Self.Order_by_Shift" />
+          <EntitySet Name="Paint" EntityType="Self.Paint" />
+          <EntitySet Name="Paint_Warehouse" EntityType="Self.Paint_Warehouse" />
+          <EntitySet Name="Positions" EntityType="Self.Positions" />
+          <EntitySet Name="Product" EntityType="Self.Product" />
+          <EntitySet Name="Products_Warehouse" EntityType="Self.Products_Warehouse" />
+          <EntitySet Name="Shift_Composition" EntityType="Self.Shift_Composition" />
+          <EntitySet Name="Shift_Costumables" EntityType="Self.Shift_Costumables" />
+          <EntitySet Name="User_App" EntityType="Self.User_App" />
+          <EntitySet Name="Work_Shift" EntityType="Self.Work_Shift" />
+          <AssociationSet Name="FK__Costumables__Id___60A75C0F" Association="Self.FK__Costumables__Id___60A75C0F">
+            <End Role="Costumables" EntitySet="Costumables" />
+            <End Role="Costumables_Warehouse" EntitySet="Costumables_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Cost__id_C__6EF57B66" Association="Self.FK__Shift_Cost__id_C__6EF57B66">
+            <End Role="Costumables" EntitySet="Costumables" />
+            <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employers__Posit__52593CB8" Association="Self.FK__Employers__Posit__52593CB8">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="Employers" EntitySet="Employers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Master___id_E__5535A963" Association="Self.FK__Master___id_E__5535A963">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="Master_" EntitySet="Master_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Comp__id_E__72C60C4A" Association="Self.FK__Shift_Comp__id_E__72C60C4A">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="Shift_Composition" EntitySet="Shift_Composition" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_App__id_E__7C4F7684" Association="Self.FK__User_App__id_E__7C4F7684">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="User_App" EntitySet="User_App" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Master___68487DD7" Association="Self.FK__Order___Master___68487DD7">
+            <End Role="Master_" EntitySet="Master_" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Work_Shif__Maste__6B24EA82" Association="Self.FK__Work_Shif__Maste__6B24EA82">
+            <End Role="Master_" EntitySet="Master_" />
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Paint__6754599E" Association="Self.FK__Order___Paint__6754599E">
+            <End Role="Paint" EntitySet="Paint" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Product__66603565" Association="Self.FK__Order___Product__66603565">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_by_S__id_O__76969D2E" Association="Self.FK__Order_by_S__id_O__76969D2E">
+            <End Role="Order_" EntitySet="Order_" />
+            <End Role="Order_by_Shift" EntitySet="Order_by_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_by___id_WS__75A278F5" Association="Self.FK__Order_by___id_WS__75A278F5">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="Order_by_Shift" EntitySet="Order_by_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Paint_Wareh__Id___6383C8BA" Association="Self.FK__Paint_Wareh__Id___6383C8BA">
+            <End Role="Paint" EntitySet="Paint" />
+            <End Role="Paint_Warehouse" EntitySet="Paint_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products_Wa__Id___5DCAEF64" Association="Self.FK__Products_Wa__Id___5DCAEF64">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Products_Warehouse" EntitySet="Products_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Com__id_WS__71D1E811" Association="Self.FK__Shift_Com__id_WS__71D1E811">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="Shift_Composition" EntitySet="Shift_Composition" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Cos__id_WS__6E01572D" Association="Self.FK__Shift_Cos__id_WS__6E01572D">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Perfomance_ArtistModelContainer" CdmEntityContainer="Perfomance_ArtistEntities">
+          <EntitySetMapping Name="Costumables">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Costumables">
+              <MappingFragment StoreEntitySet="Costumables">
+                <ScalarProperty Name="id_C" ColumnName="id_C" />
+                <ScalarProperty Name="Name_C" ColumnName="Name_C" />
+                <ScalarProperty Name="Material_C" ColumnName="Material_C" />
+                <ScalarProperty Name="Volume_Amount_C" ColumnName="Volume_Amount_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Costumables_Warehouse">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Costumables_Warehouse">
+              <MappingFragment StoreEntitySet="Costumables_Warehouse">
+                <ScalarProperty Name="id_W" ColumnName="id_W" />
+                <ScalarProperty Name="Id_" ColumnName="Id_" />
+                <ScalarProperty Name="Reminder_C" ColumnName="Reminder_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employers">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Employers">
+              <MappingFragment StoreEntitySet="Employers">
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="Surname_E" ColumnName="Surname_E" />
+                <ScalarProperty Name="Name_E" ColumnName="Name_E" />
+                <ScalarProperty Name="Patronymic_e" ColumnName="Patronymic_e" />
+                <ScalarProperty Name="Position_E" ColumnName="Position_E" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Master_">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Master_">
+              <MappingFragment StoreEntitySet="Master_">
+                <ScalarProperty Name="id_M" ColumnName="id_M" />
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="Expirience_M" ColumnName="Expirience_M" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Order_">
+              <MappingFragment StoreEntitySet="Order_">
+                <ScalarProperty Name="id_O" ColumnName="id_O" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="Paint" ColumnName="Paint" />
+                <ScalarProperty Name="Master_" ColumnName="Master_" />
+                <ScalarProperty Name="Amount_Product" ColumnName="Amount_Product" />
+                <ScalarProperty Name="Total_Area" ColumnName="Total_Area" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Order_by_Shift">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Order_by_Shift">
+              <MappingFragment StoreEntitySet="Order_by_Shift">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+                <ScalarProperty Name="id_O" ColumnName="id_O" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paint">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Paint">
+              <MappingFragment StoreEntitySet="Paint">
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
+                <ScalarProperty Name="Name_Color_P" ColumnName="Name_Color_P" />
+                <ScalarProperty Name="ISO_P" ColumnName="ISO_P" />
+                <ScalarProperty Name="Manufacter" ColumnName="Manufacter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Paint_Warehouse">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Paint_Warehouse">
+              <MappingFragment StoreEntitySet="Paint_Warehouse">
+                <ScalarProperty Name="id_W" ColumnName="id_W" />
+                <ScalarProperty Name="Id_" ColumnName="Id_" />
+                <ScalarProperty Name="Reminder_P" ColumnName="Reminder_P" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Positions">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Positions">
+              <MappingFragment StoreEntitySet="Positions">
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
+                <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+                <ScalarProperty Name="Schedule_P" ColumnName="Schedule_P" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
+                <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+                <ScalarProperty Name="Sizes_l_w_h_P" ColumnName="Sizes_l_w_h_P" />
+                <ScalarProperty Name="Thickness_P" ColumnName="Thickness_P" />
+                <ScalarProperty Name="Size_P" ColumnName="Size_P" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products_Warehouse">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Products_Warehouse">
+              <MappingFragment StoreEntitySet="Products_Warehouse">
+                <ScalarProperty Name="id_W" ColumnName="id_W" />
+                <ScalarProperty Name="Id_" ColumnName="Id_" />
+                <ScalarProperty Name="Reminder_P" ColumnName="Reminder_P" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shift_Composition">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Shift_Composition">
+              <MappingFragment StoreEntitySet="Shift_Composition">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shift_Costumables">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Shift_Costumables">
+              <MappingFragment StoreEntitySet="Shift_Costumables">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+                <ScalarProperty Name="id_C" ColumnName="id_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User_App">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.User_App">
+              <MappingFragment StoreEntitySet="User_App">
+                <ScalarProperty Name="id_U" ColumnName="id_U" />
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Work_Shift">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Work_Shift">
+              <MappingFragment StoreEntitySet="Work_Shift">
+                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+                <ScalarProperty Name="Date_WS" ColumnName="Date_WS" />
+                <ScalarProperty Name="Master_" ColumnName="Master_" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

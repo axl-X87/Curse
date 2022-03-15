@@ -1,0 +1,36 @@
+﻿<Page x:Class="Neckhozhin_Cursach.Windows.Frames.OrderCompositionFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Neckhozhin_Cursach.Windows.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="689" d:DesignWidth="909"
+      Title="OrderCompositionFrame">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="1.5*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Button Click="ShowOrders_Click" x:Name="ShowOrders" Grid.Column="0" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="10" Content="Показать заказы"/>
+        </Grid>
+        <ListView x:Name="OrderVL" Grid.Column="2" SelectionChanged="OrderVL_SelectionChanged"> 
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Продукция" DisplayMemberBinding="{Binding Product1.Name_P}"/>
+                    <GridViewColumn Header="Цвет" DisplayMemberBinding="{Binding Paint1.Name_Color_P}"/>
+                    <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Amount_Product}"/>
+                    <GridViewColumn Header="Общая квадратура" DisplayMemberBinding="{Binding Total_Area}"/>
+                    <GridViewColumn Header="Мастер" DisplayMemberBinding="{Binding Master_1.Employers.Surname_E}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

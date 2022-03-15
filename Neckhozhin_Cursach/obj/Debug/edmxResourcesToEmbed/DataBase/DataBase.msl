@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище TestCursachModelContainer" CdmEntityContainer="TestCursachEntities">
+    <EntitySetMapping Name="Costumables">
+      <EntityTypeMapping TypeName="TestCursachModel.Costumables">
+        <MappingFragment StoreEntitySet="Costumables">
+          <ScalarProperty Name="id_C" ColumnName="id_C" />
+          <ScalarProperty Name="Name_C" ColumnName="Name_C" />
+          <ScalarProperty Name="Material_C" ColumnName="Material_C" />
+          <ScalarProperty Name="Volume_Amount_C" ColumnName="Volume_Amount_C" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Costumables_Warehouse">
+      <EntityTypeMapping TypeName="TestCursachModel.Costumables_Warehouse">
+        <MappingFragment StoreEntitySet="Costumables_Warehouse">
+          <ScalarProperty Name="id_W" ColumnName="id_W" />
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="Reminder_C" ColumnName="Reminder_C" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employers">
+      <EntityTypeMapping TypeName="TestCursachModel.Employers">
+        <MappingFragment StoreEntitySet="Employers">
+          <ScalarProperty Name="id_E" ColumnName="id_E" />
+          <ScalarProperty Name="Surname_E" ColumnName="Surname_E" />
+          <ScalarProperty Name="Name_E" ColumnName="Name_E" />
+          <ScalarProperty Name="Patronymic_e" ColumnName="Patronymic_e" />
+          <ScalarProperty Name="Position_E" ColumnName="Position_E" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_">
+      <EntityTypeMapping TypeName="TestCursachModel.Master_">
+        <MappingFragment StoreEntitySet="Master_">
+          <ScalarProperty Name="id_M" ColumnName="id_M" />
+          <ScalarProperty Name="id_E" ColumnName="id_E" />
+          <ScalarProperty Name="Expirience_M" ColumnName="Expirience_M" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_">
+      <EntityTypeMapping TypeName="TestCursachModel.Order_">
+        <MappingFragment StoreEntitySet="Order_">
+          <ScalarProperty Name="id_O" ColumnName="id_O" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Paint" ColumnName="Paint" />
+          <ScalarProperty Name="Master_" ColumnName="Master_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_by_Shift">
+      <EntityTypeMapping TypeName="TestCursachModel.Order_by_Shift">
+        <MappingFragment StoreEntitySet="Order_by_Shift">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+          <ScalarProperty Name="id_O" ColumnName="id_O" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paint">
+      <EntityTypeMapping TypeName="TestCursachModel.Paint">
+        <MappingFragment StoreEntitySet="Paint">
+          <ScalarProperty Name="id_P" ColumnName="id_P" />
+          <ScalarProperty Name="Name_Color_P" ColumnName="Name_Color_P" />
+          <ScalarProperty Name="ISO_P" ColumnName="ISO_P" />
+          <ScalarProperty Name="Manufacter" ColumnName="Manufacter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paint_Warehouse">
+      <EntityTypeMapping TypeName="TestCursachModel.Paint_Warehouse">
+        <MappingFragment StoreEntitySet="Paint_Warehouse">
+          <ScalarProperty Name="id_W" ColumnName="id_W" />
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="Reminder_P" ColumnName="Reminder_P" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="TestCursachModel.Positions">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="id_P" ColumnName="id_P" />
+          <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+          <ScalarProperty Name="Schedule_P" ColumnName="Schedule_P" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="TestCursachModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="id_P" ColumnName="id_P" />
+          <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+          <ScalarProperty Name="Sizes_l_w_h_P" ColumnName="Sizes_l_w_h_P" />
+          <ScalarProperty Name="Thickness_P" ColumnName="Thickness_P" />
+          <ScalarProperty Name="Size_P" ColumnName="Size_P" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products_Warehouse">
+      <EntityTypeMapping TypeName="TestCursachModel.Products_Warehouse">
+        <MappingFragment StoreEntitySet="Products_Warehouse">
+          <ScalarProperty Name="id_W" ColumnName="id_W" />
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="Reminder_P" ColumnName="Reminder_P" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shift_Composition">
+      <EntityTypeMapping TypeName="TestCursachModel.Shift_Composition">
+        <MappingFragment StoreEntitySet="Shift_Composition">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+          <ScalarProperty Name="id_E" ColumnName="id_E" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shift_Costumables">
+      <EntityTypeMapping TypeName="TestCursachModel.Shift_Costumables">
+        <MappingFragment StoreEntitySet="Shift_Costumables">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+          <ScalarProperty Name="id_C" ColumnName="id_C" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TestCursachModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_Shift">
+      <EntityTypeMapping TypeName="TestCursachModel.Work_Shift">
+        <MappingFragment StoreEntitySet="Work_Shift">
+          <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+          <ScalarProperty Name="Date_WS" ColumnName="Date_WS" />
+          <ScalarProperty Name="Master_" ColumnName="Master_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

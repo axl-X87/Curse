@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище Perfomance_ArtistModelContainer" CdmEntityContainer="Perfomance_ArtistEntities">
+    <EntitySetMapping Name="Costumables">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Costumables">
+        <MappingFragment StoreEntitySet="Costumables">
+          <ScalarProperty Name="id_C" ColumnName="id_C" />
+          <ScalarProperty Name="Name_C" ColumnName="Name_C" />
+          <ScalarProperty Name="Material_C" ColumnName="Material_C" />
+          <ScalarProperty Name="Volume_Amount_C" ColumnName="Volume_Amount_C" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Costumables_Warehouse">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Costumables_Warehouse">
+        <MappingFragment StoreEntitySet="Costumables_Warehouse">
+          <ScalarProperty Name="id_W" ColumnName="id_W" />
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="Reminder_C" ColumnName="Reminder_C" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employers">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Employers">
+        <MappingFragment StoreEntitySet="Employers">
+          <ScalarProperty Name="id_E" ColumnName="id_E" />
+          <ScalarProperty Name="Surname_E" ColumnName="Surname_E" />
+          <ScalarProperty Name="Name_E" ColumnName="Name_E" />
+          <ScalarProperty Name="Patronymic_e" ColumnName="Patronymic_e" />
+          <ScalarProperty Name="Position_E" ColumnName="Position_E" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Master_">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Master_">
+        <MappingFragment StoreEntitySet="Master_">
+          <ScalarProperty Name="id_M" ColumnName="id_M" />
+          <ScalarProperty Name="id_E" ColumnName="id_E" />
+          <ScalarProperty Name="Expirience_M" ColumnName="Expirience_M" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Order_">
+        <MappingFragment StoreEntitySet="Order_">
+          <ScalarProperty Name="id_O" ColumnName="id_O" />
+          <ScalarProperty Name="Product" ColumnName="Product" />
+          <ScalarProperty Name="Paint" ColumnName="Paint" />
+          <ScalarProperty Name="Master_" ColumnName="Master_" />
+          <ScalarProperty Name="Amount_Product" ColumnName="Amount_Product" />
+          <ScalarProperty Name="Total_Area" ColumnName="Total_Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Order_by_Shift">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Order_by_Shift">
+        <MappingFragment StoreEntitySet="Order_by_Shift">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+          <ScalarProperty Name="id_O" ColumnName="id_O" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paint">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Paint">
+        <MappingFragment StoreEntitySet="Paint">
+          <ScalarProperty Name="id_P" ColumnName="id_P" />
+          <ScalarProperty Name="Name_Color_P" ColumnName="Name_Color_P" />
+          <ScalarProperty Name="ISO_P" ColumnName="ISO_P" />
+          <ScalarProperty Name="Manufacter" ColumnName="Manufacter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paint_Warehouse">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Paint_Warehouse">
+        <MappingFragment StoreEntitySet="Paint_Warehouse">
+          <ScalarProperty Name="id_W" ColumnName="id_W" />
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="Reminder_P" ColumnName="Reminder_P" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Positions">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Positions">
+        <MappingFragment StoreEntitySet="Positions">
+          <ScalarProperty Name="id_P" ColumnName="id_P" />
+          <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+          <ScalarProperty Name="Schedule_P" ColumnName="Schedule_P" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Product">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Product">
+        <MappingFragment StoreEntitySet="Product">
+          <ScalarProperty Name="id_P" ColumnName="id_P" />
+          <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+          <ScalarProperty Name="Sizes_l_w_h_P" ColumnName="Sizes_l_w_h_P" />
+          <ScalarProperty Name="Thickness_P" ColumnName="Thickness_P" />
+          <ScalarProperty Name="Size_P" ColumnName="Size_P" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products_Warehouse">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Products_Warehouse">
+        <MappingFragment StoreEntitySet="Products_Warehouse">
+          <ScalarProperty Name="id_W" ColumnName="id_W" />
+          <ScalarProperty Name="Id_" ColumnName="Id_" />
+          <ScalarProperty Name="Reminder_P" ColumnName="Reminder_P" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shift_Composition">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Shift_Composition">
+        <MappingFragment StoreEntitySet="Shift_Composition">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+          <ScalarProperty Name="id_E" ColumnName="id_E" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Shift_Costumables">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Shift_Costumables">
+        <MappingFragment StoreEntitySet="Shift_Costumables">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+          <ScalarProperty Name="id_C" ColumnName="id_C" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User_App">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.User_App">
+        <MappingFragment StoreEntitySet="User_App">
+          <ScalarProperty Name="id_U" ColumnName="id_U" />
+          <ScalarProperty Name="id_E" ColumnName="id_E" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Work_Shift">
+      <EntityTypeMapping TypeName="Perfomance_ArtistModel.Work_Shift">
+        <MappingFragment StoreEntitySet="Work_Shift">
+          <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+          <ScalarProperty Name="Date_WS" ColumnName="Date_WS" />
+          <ScalarProperty Name="Master_" ColumnName="Master_" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
