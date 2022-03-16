@@ -1,0 +1,42 @@
+﻿<Page x:Class="Neckhozhin_Cursach.Windows.Frames.ConstructorOrderFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Neckhozhin_Cursach.Windows.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="689" d:DesignWidth="909"
+      Title="ConstructorOrderFrame">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <TextBlock Text="Выберите продукцию" Style="{StaticResource TextBlTitleStyle}" TextWrapping="Wrap"/>
+        <TextBlock Grid.Column="1" Text="Выберите краску" Style="{StaticResource TextBlTitleStyle}" TextWrapping="Wrap"/>
+        <TextBlock Grid.Column="2" Text="Выберите дату выполнения" Style="{StaticResource TextBlTitleStyle}" TextWrapping="Wrap"/>
+        <StackPanel Grid.Column="0" Grid.Row="1" Height="300" VerticalAlignment="Top">
+            <ComboBox x:Name="ProductListCB" Height="30" VerticalAlignment="Top" Margin="20"/>
+            <TextBlock Text="Количество" Style="{StaticResource TextBlStyle}" Margin="10"/>
+            <TextBox x:Name="AmountProductTB" Margin="40 10"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Grid.Row="1" Height="300" VerticalAlignment="Top">
+            <ComboBox x:Name="PaintListCB" Height="30" VerticalAlignment="Top" Margin="20"/>
+            <TextBlock Text="Пример цвета:" Margin="30 50 30 10"/>
+            <Border x:Name="ShowColorB" Height="100" Width="100" Background="Cyan"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Grid.Row="1" Height="300" VerticalAlignment="Top">
+            <DatePicker x:Name="DateOrderFinishDP"/>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.ColumnSpan="3">
+            <Button Content="Создать заказ" Style="{StaticResource SystemButtonStyle}" Margin="40" Width="300" />
+        </Grid>
+    </Grid>
+</Page>

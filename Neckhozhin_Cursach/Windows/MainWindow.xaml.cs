@@ -43,7 +43,7 @@ namespace Neckhozhin_Cursach
 
         private void Test_Click(object sender, RoutedEventArgs e)
         {
-            
+            MainFrame.Navigate(new Windows.Frames.ConstructorOrderFrame());
         }
     }
 }

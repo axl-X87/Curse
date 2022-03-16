@@ -68,6 +68,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Frames\ConstructorOrderFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Frames\Employer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -156,6 +160,9 @@
     </Compile>
     <Compile Include="Windows\Frames\AddEmployerFrame.xaml.cs">
       <DependentUpon>AddEmployerFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Frames\ConstructorOrderFrame.xaml.cs">
+      <DependentUpon>ConstructorOrderFrame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Frames\Employer.xaml.cs">
       <DependentUpon>Employer.xaml</DependentUpon>

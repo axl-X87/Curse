@@ -16,10 +16,10 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1.5*"/>
         </Grid.RowDefinitions>
-        <GroupBox  Foreground="White" Header="Ваш логин" Grid.Row="1" BorderThickness="0">
+        <GroupBox  Foreground="DarkGray" Header="Ваш логин" Grid.Row="1" BorderThickness="0">
             <TextBox x:Name="LoginTBx" Height="34" FontSize="20" Style="{StaticResource TextBxStyle}"/>
         </GroupBox>
-        <GroupBox  Foreground="White" Header="Ваш Пароль" Grid.Row="2" BorderThickness="0">
+        <GroupBox  Foreground="DarkGray" Header="Ваш Пароль" Grid.Row="2" BorderThickness="0">
             <PasswordBox x:Name="PasswwordPBx" Height="34" FontSize="20" Style="{StaticResource PassBxStyle}"/>
         </GroupBox>
         <Button x:Name="LogInBtn" Grid.Row="3" Click="LogInBtn_Click" Style="{StaticResource SystemButtonStyle}" Margin="15 10" Content="Войти"/>

@@ -53,3 +53,39 @@ C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckho
 C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\OrderCompositionFrame.baml
 C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Employer.g.cs
 C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Employer.baml
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.exe.config
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.exe
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\Neckhozhin_Cursach.pdb
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\EntityFramework.dll
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\EntityFramework.SqlServer.dll
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\EntityFramework.xml
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\EntityFramework.SqlServer.xml
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\ru\EntityFramework.resources.dll
+O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.AssemblyReference.cache
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\AddEmployerFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Employer.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\EmployerListFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\LoginFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\OrderCompositionFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\MainWindow.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\App.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach_Content.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach_MarkupCompile.cache
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach_MarkupCompile.lref
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\App.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\AddEmployerFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Employer.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\EmployerListFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\LoginFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\OrderCompositionFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\MainWindow.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.g.resources
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.Properties.Resources.resources
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.GenerateResource.cache
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.CoreCompileInputs.cache
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.CopyComplete
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.exe
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.pdb
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\ConstructorOrderFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\ConstructorOrderFrame.baml
