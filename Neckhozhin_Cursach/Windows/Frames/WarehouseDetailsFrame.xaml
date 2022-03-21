@@ -1,0 +1,41 @@
+﻿<Page x:Class="Neckhozhin_Cursach.Windows.Frames.WarehouseDetailsFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Neckhozhin_Cursach.Windows.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="689" d:DesignWidth="909"
+      Title="WarehouseDetailsFrame">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+        <StackPanel >
+            <TextBlock Text="Склад деталей" Margin="10 10" Style="{StaticResource TextBlTitleStyle}"/>
+            <GroupBox Header="Поиск по наименованию детали" Margin="10">
+                <StackPanel>
+                    <TextBlock Text="Найти деталь:" Margin="10 20" Style="{StaticResource TextBlStyle}"/>
+                    <TextBox Style="{StaticResource TextBxStyle}" x:Name="FilterNameTbx" Height="35" MaxWidth="450" Margin="10 10"/>
+                    <Button x:Name="FilterNameBtn" Content="Выбрать по наименованию" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </GroupBox>
+            <GroupBox Header="Поиск по толщине детали" Margin="10">
+                <StackPanel>
+                    <TextBlock Text="Найти деталь:" Margin="10 20" Style="{StaticResource TextBlStyle}"/>
+                    <TextBox Style="{StaticResource TextBxStyle}" x:Name="FilterThicknessTbx" Height="35" MaxWidth="450" Margin="10 10"/>
+                    <Button Content="Выбрать по толщине" x:Name="FilterThicknessBtn" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
+                </StackPanel>
+            </GroupBox>
+        </StackPanel>
+        <ListView Grid.Column="1">
+            <ListView.View>
+                <GridView>
+                    
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

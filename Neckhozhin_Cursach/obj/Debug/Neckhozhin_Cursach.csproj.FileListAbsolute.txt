@@ -89,3 +89,11 @@ O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.exe
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.pdb
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\ConstructorOrderFrame.g.cs
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\ConstructorOrderFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\SelectWarehouseFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehouseDetailsFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\SelectWarehouseFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehouseDetailsFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehouseCostumablesFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehousePaintFrame.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehouseCostumablesFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehousePaintFrame.baml

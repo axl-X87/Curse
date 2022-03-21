@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Neckhozhin_Cursach.Windows.Frames;
 
 namespace Neckhozhin_Cursach
 {
@@ -23,27 +24,28 @@ namespace Neckhozhin_Cursach
         public MainWindow()
         {
             InitializeComponent();
-            PersonalFrame.Navigate(new Windows.Frames.LoginFrame());
+            PersonalFrame.Navigate(new LoginFrame());
         }
 
         private void Employer_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Windows.Frames.Employer());
+            MainFrame.Navigate(new Employer());
         }
 
-        private void AddEmploer_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new Windows.Frames.AddEmployerFrame());
-        }
 
         private void OrderComposition_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Windows.Frames.OrderCompositionFrame());
+            MainFrame.Navigate(new OrderCompositionFrame());
         }
 
         private void Test_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new Windows.Frames.ConstructorOrderFrame());
+            MainFrame.Navigate(new ConstructorOrderFrame());
+        }
+
+        private void Warehouse_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new SelectWarehouseFrame());
         }
     }
 }

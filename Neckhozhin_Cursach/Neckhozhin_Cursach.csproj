@@ -88,6 +88,22 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Frames\SelectWarehouseFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Frames\WarehouseCostumablesFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Frames\WarehouseDetailsFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\Frames\WarehousePaintFrame.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -175,6 +191,18 @@
     </Compile>
     <Compile Include="Windows\Frames\OrderCompositionFrame.xaml.cs">
       <DependentUpon>OrderCompositionFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Frames\SelectWarehouseFrame.xaml.cs">
+      <DependentUpon>SelectWarehouseFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Frames\WarehouseCostumablesFrame.xaml.cs">
+      <DependentUpon>WarehouseCostumablesFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Frames\WarehouseDetailsFrame.xaml.cs">
+      <DependentUpon>WarehouseDetailsFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Frames\WarehousePaintFrame.xaml.cs">
+      <DependentUpon>WarehousePaintFrame.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Neckhozhin_Cursach"
              StartupUri="/Windows/MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="GroupBox">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
         <Style TargetType="TextBlock" x:Key="TextBlStyle">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="TextDecorations" Value="Underline"/>
@@ -13,6 +17,12 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontSize" Value="40"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ShortTextBlTitleStyle">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
         <Style TargetType="TextBox" x:Key="TextBxStyle">
             <Setter Property="FontSize" Value="20"/>

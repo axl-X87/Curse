@@ -27,7 +27,7 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Orientation="Horizontal">                
                 <Button Height="73" Width="163" x:Name="Employer" Click="Employer_Click" Grid.Column="0" Content="Test#1" Style="{StaticResource MenuButtonStyle}"/>
-                <Button Height="73" Width="163" x:Name="AddEmploer" Click="AddEmploer_Click" Content="Test#2" Style="{StaticResource MenuButtonStyle}"/>
+                <Button Height="73" Width="163" x:Name="Warehouse" Click="Warehouse_Click" Content="Test#2" Style="{StaticResource MenuButtonStyle}"/>
                 <Button Height="73" Width="163" x:Name="OrderComposition" Content="Test#3" Click="OrderComposition_Click" Style="{StaticResource MenuButtonStyle}"/>
                 <Button Height="73" Width="163" Content="Test#4" Style="{StaticResource MenuButtonStyle}"/>
                 <Button Height="73" Width="163" x:Name="Test" Click="Test_Click" Content="Test#5" Style="{StaticResource MenuButtonStyle}"/>
