@@ -62,7 +62,6 @@ O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\EntityFramework.xml
 O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\EntityFramework.SqlServer.xml
 O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\ru\EntityFramework.resources.dll
 O:\Course_Neck\Neckhozhin_Cursach\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
-O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.AssemblyReference.cache
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\AddEmployerFrame.g.cs
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Employer.g.cs
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\EmployerListFrame.g.cs
