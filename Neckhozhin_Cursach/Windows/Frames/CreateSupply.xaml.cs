@@ -24,5 +24,15 @@ namespace Neckhozhin_Cursach.Windows.Frames
         {
             InitializeComponent();
         }
+
+        private void CreateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Тип продукции : " + TypeCb.Text.ToString()+"\n Название продукции : " + NameTbx.Text + "\n Количество : " + CountTbx.Text);
+        }
+
+        private void TypeCb_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }

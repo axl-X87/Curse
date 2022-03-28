@@ -47,5 +47,10 @@ namespace Neckhozhin_Cursach
         {
             MainFrame.Navigate(new SelectWarehouseFrame());
         }
+
+        private void CreateSupply_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new CreateSupply());
+        }
     }
 }

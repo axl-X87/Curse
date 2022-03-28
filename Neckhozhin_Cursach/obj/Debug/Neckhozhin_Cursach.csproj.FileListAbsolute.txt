@@ -96,3 +96,6 @@ O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehouseCostumablesF
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehousePaintFrame.g.cs
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehouseCostumablesFrame.baml
 O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\WarehousePaintFrame.baml
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.AssemblyReference.cache
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\CreateSupply.g.cs
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\Windows\Frames\CreateSupply.baml
