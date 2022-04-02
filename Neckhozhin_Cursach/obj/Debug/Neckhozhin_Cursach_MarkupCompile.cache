@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\obj\Debug\
+O:\Course_Neck\Neckhozhin_Cursach\obj\Debug\
 Neckhozhin_Cursach
 none
 false
 DEBUG;TRACE
-C:\Users\Привет!\Documents\Новая папка\Neckhozhin_Cursach\Neckhozhin_Cursach\App.xaml
-6243122768
-2-1670966889
-30-1154856069
-18-2106689357
-Windows\Frames\AddEmployerFrame.xaml;Windows\Frames\Employer.xaml;Windows\Frames\EmployerListFrame.xaml;Windows\Frames\LoginFrame.xaml;Windows\Frames\OrderCompositionFrame.xaml;Windows\MainWindow.xaml;
+O:\Course_Neck\Neckhozhin_Cursach\App.xaml
+12-52492625
+2-290982251
+361462506134
+18-1269633229
+Windows\Frames\AddEmployerFrame.xaml;Windows\Frames\ConstructorOrderFrame.xaml;Windows\Frames\CreateSupply.xaml;Windows\Frames\Employer.xaml;Windows\Frames\EmployerListFrame.xaml;Windows\Frames\LoginFrame.xaml;Windows\Frames\OrderCompositionFrame.xaml;Windows\Frames\SelectWarehouseFrame.xaml;Windows\Frames\WarehouseCostumablesFrame.xaml;Windows\Frames\WarehouseDetailsFrame.xaml;Windows\Frames\WarehousePaintFrame.xaml;Windows\MainWindow.xaml;
 
 False
 

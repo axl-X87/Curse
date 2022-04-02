@@ -1,0 +1,12 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "project": "Neckhozhin_Cursach\\Windows\\Frames\\AddEmployerFrame.xaml",
+      "projectTarget": "",
+      "name": "AddEmployerFrame.xaml"
+    }
+  ]
+}

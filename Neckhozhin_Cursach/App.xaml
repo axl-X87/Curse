@@ -4,6 +4,10 @@
              xmlns:local="clr-namespace:Neckhozhin_Cursach"
              StartupUri="/Windows/MainWindow.xaml">
     <Application.Resources>
+        <Style TargetType="GroupBox">
+            <Setter Property="BorderBrush" Value="Black"/>
+            <Setter Property="BorderThickness" Value="1"/>
+        </Style>
         <Style TargetType="TextBlock" x:Key="TextBlStyle">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="TextDecorations" Value="Underline"/>
@@ -12,7 +16,13 @@
         <Style TargetType="TextBlock" x:Key="TextBlTitleStyle">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontSize" Value="40"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ShortTextBlTitleStyle">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontSize" Value="30"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
         </Style>
         <Style TargetType="TextBox" x:Key="TextBxStyle">
             <Setter Property="FontSize" Value="20"/>
@@ -67,9 +77,22 @@
                             <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="red"/>
-                            </Trigger>
+                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="Gray" To="White" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"  FillBehavior="HoldEnd" Duration="0:0:0.1"/>
+                                        <ColorAnimation From="#FFC8C8C8" To="Gray" Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)"  FillBehavior="HoldEnd" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Button.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="White" To="Gray" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"  FillBehavior="Stop" Duration="0:0:0.2"/>
+                                        <ColorAnimation From="Gray" To="#FFC8C8C8" Storyboard.TargetProperty="(Button.BorderBrush).(SolidColorBrush.Color)"  FillBehavior="Stop" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Background" Value="White"/>
                                 <Setter Property="BorderBrush" Value="Black"/>
@@ -84,7 +107,7 @@
             <Setter Property="BorderBrush" Value="Gray"/>
             <Setter Property="Foreground" Value="Gray"/>
             <Setter Property="Margin" Value="5 0"/>
-            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Background" Value="White"/>
             <Setter Property="BorderThickness" Value="3"/>
             <Setter Property="Template">
                 <Setter.Value>
@@ -93,10 +116,22 @@
                             <ContentPresenter Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Foreground" Value="White"/>
-                                <Setter Property="Background" Value="Gray"/>
-                            </Trigger>
+                            <EventTrigger RoutedEvent="Button.MouseEnter">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="White" To="Gray" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"  FillBehavior="HoldEnd" Duration="0:0:0.2"/>
+                                        <ColorAnimation From="Gray" To="White" Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"  FillBehavior="HoldEnd" Duration="0:0:0.2"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="Button.MouseLeave">
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation From="Gray" To="White" Storyboard.TargetProperty="(Button.Background).(SolidColorBrush.Color)"  FillBehavior="Stop" Duration="0:0:0.1"/>
+                                        <ColorAnimation From="White" To="Gray" Storyboard.TargetProperty="(Button.Foreground).(SolidColorBrush.Color)"  FillBehavior="HoldEnd" Duration="0:0:0.1"/>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
                             <Trigger Property="IsPressed" Value="True">
                                 <Setter Property="Foreground" Value="Black"/>
                                 <Setter Property="Background" Value="White"/>
