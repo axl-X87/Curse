@@ -23,20 +23,32 @@
         <TextBlock Grid.Column="1" Text="Выберите краску" Style="{StaticResource TextBlTitleStyle}" TextWrapping="Wrap"/>
         <TextBlock Grid.Column="2" Text="Выберите дату выполнения" Style="{StaticResource TextBlTitleStyle}" TextWrapping="Wrap"/>
         <StackPanel Grid.Column="0" Grid.Row="1" Height="300" VerticalAlignment="Top">
-            <ComboBox x:Name="ProductListCB" Height="30" VerticalAlignment="Top" Margin="20"/>
+           <ComboBox x:Name="ProductListCB" DropDownOpened="ProductListCB_DropDownOpened" Height="30" VerticalAlignment="Top" Margin="20">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name_P}" Background="Transparent"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <TextBlock Text="Количество" Style="{StaticResource TextBlStyle}" Margin="10"/>
             <TextBox x:Name="AmountProductTB" Margin="40 10"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Grid.Row="1" Height="300" VerticalAlignment="Top">
-            <ComboBox x:Name="PaintListCB" Height="30" VerticalAlignment="Top" Margin="20"/>
+            <ComboBox x:Name="PaintListCB" SelectionChanged="PaintListCB_SelectionChanged" DropDownOpened="PaintListCB_DropDownOpened"  Height="30" VerticalAlignment="Top" Margin="20">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name_Color_P}" Background="Transparent"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
             <TextBlock Text="Пример цвета:" Margin="30 50 30 10"/>
-            <Border x:Name="ShowColorB" Height="100" Width="100" Background="Cyan"/>
+            <Border x:Name="ShowColorB" Background="Transparent" Height="100" Width="100"/>
         </StackPanel>
         <StackPanel Grid.Column="2" Grid.Row="1" Height="300" VerticalAlignment="Top">
             <DatePicker x:Name="DateOrderFinishDP"/>
         </StackPanel>
         <Grid Grid.Row="2" Grid.ColumnSpan="3">
-            <Button Content="Создать заказ" Style="{StaticResource SystemButtonStyle}" Margin="40" Width="300" />
+            <Button x:Name="CreateBtn" Click="CreateBtn_Click" Content="Создать заказ" Style="{StaticResource SystemButtonStyle}" Margin="40" Width="300" />
         </Grid>
     </Grid>
 </Page>

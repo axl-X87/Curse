@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Neckhozhin_Cursach.DataBase;
+using Neckhozhin_Cursach.Class;
 
 namespace Neckhozhin_Cursach.Windows.Frames
 {
@@ -23,6 +25,50 @@ namespace Neckhozhin_Cursach.Windows.Frames
         public ConstructorOrderFrame()
         {
             InitializeComponent();
+        }
+
+        private void CreateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Order_ order = new Order_();
+            if (ProductListCB.SelectedIndex != -1 && PaintListCB.SelectedIndex != -1)
+            {
+                try
+                {
+                    order.Product = (ProductListCB.SelectedIndex + 2);
+                    order.Paint = (PaintListCB.SelectedIndex + 1);
+                    order.Amount_Product = Convert.ToInt32(AmountProductTB.Text);
+                    order.Total_Area_Value = DataBaseConnection.entities.Product.Where(i => i.id_P == (ProductListCB.SelectedIndex + 2)).Select(i => i.Size_Value_P).FirstOrDefault();
+                    order.Tatal_Area = DataBaseConnection.entities.Product.Where(i => i.id_P == (ProductListCB.SelectedIndex + 2)).Select(i => i.Size_P).FirstOrDefault() * Convert.ToInt32(AmountProductTB.Text);
+                    order.Paint = (PaintListCB.SelectedIndex + 1);
+                    DataBaseConnection.entities.Order_.Add(order);
+                    DataBaseConnection.entities.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("Обратитесь к администратору", "Ошибка сохранения", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+
+            }
+        }
+
+        private void NameProductsearchTb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void ProductListCB_DropDownOpened(object sender, EventArgs e)
+        {
+            ProductListCB.ItemsSource = DataBaseConnection.entities.Product.ToList();
+        }
+
+        private void PaintListCB_DropDownOpened(object sender, EventArgs e)
+        {
+            PaintListCB.ItemsSource = DataBaseConnection.entities.Paint.ToList();
+        }
+
+        private void PaintListCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
         }
     }
 }

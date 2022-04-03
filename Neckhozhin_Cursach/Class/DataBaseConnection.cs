@@ -11,7 +11,7 @@ namespace Neckhozhin_Cursach.Class
 {
     public class DataBaseConnection
     {
-        public static Perfomance_ArtistEntities entities = new Perfomance_ArtistEntities();
+        public static Entities_Perfomance_Artist entities = new Entities_Perfomance_Artist();
         public static SqlConnection connect = null;
 
         public static void OpenConnection()

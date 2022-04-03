@@ -17,7 +17,7 @@ namespace Neckhozhin_Cursach.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Work_Shift()
         {
-            this.Order_by_Shift = new HashSet<Order_by_Shift>();
+            this.OrderbyShift = new HashSet<OrderbyShift>();
             this.Shift_Composition = new HashSet<Shift_Composition>();
             this.Shift_Costumables = new HashSet<Shift_Costumables>();
         }
@@ -28,7 +28,7 @@ namespace Neckhozhin_Cursach.DataBase
     
         public virtual Master_ Master_1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order_by_Shift> Order_by_Shift { get; set; }
+        public virtual ICollection<OrderbyShift> OrderbyShift { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Shift_Composition> Shift_Composition { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

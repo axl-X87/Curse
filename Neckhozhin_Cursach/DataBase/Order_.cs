@@ -17,7 +17,7 @@ namespace Neckhozhin_Cursach.DataBase
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Order_()
         {
-            this.Order_by_Shift = new HashSet<Order_by_Shift>();
+            this.OrderbyShift = new HashSet<OrderbyShift>();
         }
     
         public int id_O { get; set; }
@@ -25,12 +25,13 @@ namespace Neckhozhin_Cursach.DataBase
         public Nullable<int> Paint { get; set; }
         public Nullable<int> Master_ { get; set; }
         public Nullable<int> Amount_Product { get; set; }
-        public string Total_Area { get; set; }
+        public string Total_Area_Value { get; set; }
+        public Nullable<decimal> Tatal_Area { get; set; }
     
         public virtual Master_ Master_1 { get; set; }
         public virtual Paint Paint1 { get; set; }
         public virtual Product Product1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order_by_Shift> Order_by_Shift { get; set; }
+        public virtual ICollection<OrderbyShift> OrderbyShift { get; set; }
     }
 }

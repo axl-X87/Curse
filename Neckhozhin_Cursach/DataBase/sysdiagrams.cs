@@ -12,13 +12,12 @@ namespace Neckhozhin_Cursach.DataBase
     using System;
     using System.Collections.Generic;
     
-    public partial class Order_by_Shift
+    public partial class sysdiagrams
     {
-        public int id { get; set; }
-        public Nullable<int> id_WS { get; set; }
-        public Nullable<int> id_O { get; set; }
-    
-        public virtual Order_ Order_ { get; set; }
-        public virtual Work_Shift Work_Shift { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

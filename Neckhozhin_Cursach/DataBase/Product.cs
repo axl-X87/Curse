@@ -25,7 +25,8 @@ namespace Neckhozhin_Cursach.DataBase
         public string Name_P { get; set; }
         public string Sizes_l_w_h_P { get; set; }
         public string Thickness_P { get; set; }
-        public string Size_P { get; set; }
+        public string Size_Value_P { get; set; }
+        public Nullable<decimal> Size_P { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order_> Order_ { get; set; }

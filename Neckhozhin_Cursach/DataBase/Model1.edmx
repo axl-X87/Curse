@@ -49,9 +49,10 @@
           <Property Name="Paint" Type="int" />
           <Property Name="Master_" Type="int" />
           <Property Name="Amount_Product" Type="int" />
-          <Property Name="Total_Area" Type="nvarchar" MaxLength="10" />
+          <Property Name="Total_Area_Value" Type="nvarchar" MaxLength="10" />
+          <Property Name="Tatal_Area" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
-        <EntityType Name="Order_by_Shift">
+        <EntityType Name="OrderbyShift">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -92,7 +93,8 @@
           <Property Name="Name_P" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="Sizes_l_w_h_P" Type="nvarchar" MaxLength="30" />
           <Property Name="Thickness_P" Type="nvarchar" MaxLength="6" />
-          <Property Name="Size_P" Type="nvarchar" MaxLength="10" />
+          <Property Name="Size_Value_P" Type="nvarchar" MaxLength="10" />
+          <Property Name="Size_P" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="Products_Warehouse">
           <Key>
@@ -117,6 +119,16 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="id_WS" Type="int" />
           <Property Name="id_C" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="User_App">
           <Key>
@@ -209,24 +221,24 @@
         </Association>
         <Association Name="FK__Order_by___id_WS__75A278F5">
           <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
-          <End Role="Order_by_Shift" Type="Self.Order_by_Shift" Multiplicity="*" />
+          <End Role="OrderbyShift" Type="Self.OrderbyShift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Work_Shift">
               <PropertyRef Name="id_WS" />
             </Principal>
-            <Dependent Role="Order_by_Shift">
+            <Dependent Role="OrderbyShift">
               <PropertyRef Name="id_WS" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Order_by_S__id_O__76969D2E">
           <End Role="Order_" Type="Self.Order_" Multiplicity="0..1" />
-          <End Role="Order_by_Shift" Type="Self.Order_by_Shift" Multiplicity="*" />
+          <End Role="OrderbyShift" Type="Self.OrderbyShift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order_">
               <PropertyRef Name="id_O" />
             </Principal>
-            <Dependent Role="Order_by_Shift">
+            <Dependent Role="OrderbyShift">
               <PropertyRef Name="id_O" />
             </Dependent>
           </ReferentialConstraint>
@@ -333,7 +345,7 @@
           <EntitySet Name="Employers" EntityType="Self.Employers" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Master_" EntityType="Self.Master_" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order_" EntityType="Self.Order_" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Order_by_Shift" EntityType="Self.Order_by_Shift" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OrderbyShift" EntityType="Self.OrderbyShift" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Paint" EntityType="Self.Paint" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Paint_Warehouse" EntityType="Self.Paint_Warehouse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
@@ -341,6 +353,7 @@
           <EntitySet Name="Products_Warehouse" EntityType="Self.Products_Warehouse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shift_Composition" EntityType="Self.Shift_Composition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shift_Costumables" EntityType="Self.Shift_Costumables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_App" EntityType="Self.User_App" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Work_Shift" EntityType="Self.Work_Shift" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__Costumables__Id___60A75C0F" Association="Self.FK__Costumables__Id___60A75C0F">
@@ -369,11 +382,11 @@
           </AssociationSet>
           <AssociationSet Name="FK__Order_by___id_WS__75A278F5" Association="Self.FK__Order_by___id_WS__75A278F5">
             <End Role="Work_Shift" EntitySet="Work_Shift" />
-            <End Role="Order_by_Shift" EntitySet="Order_by_Shift" />
+            <End Role="OrderbyShift" EntitySet="OrderbyShift" />
           </AssociationSet>
           <AssociationSet Name="FK__Order_by_S__id_O__76969D2E" Association="Self.FK__Order_by_S__id_O__76969D2E">
             <End Role="Order_" EntitySet="Order_" />
-            <End Role="Order_by_Shift" EntitySet="Order_by_Shift" />
+            <End Role="OrderbyShift" EntitySet="OrderbyShift" />
           </AssociationSet>
           <AssociationSet Name="FK__Paint_Wareh__Id___6383C8BA" Association="Self.FK__Paint_Wareh__Id___6383C8BA">
             <End Role="Paint" EntitySet="Paint" />
@@ -467,21 +480,22 @@
           <Property Name="Paint" Type="Int32" />
           <Property Name="Master_" Type="Int32" />
           <Property Name="Amount_Product" Type="Int32" />
-          <Property Name="Total_Area" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Total_Area_Value" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Tatal_Area" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="Master_1" Relationship="Self.FK__Order___Master___68487DD7" FromRole="Order_" ToRole="Master_" />
           <NavigationProperty Name="Paint1" Relationship="Self.FK__Order___Paint__6754599E" FromRole="Order_" ToRole="Paint" />
           <NavigationProperty Name="Product1" Relationship="Self.FK__Order___Product__66603565" FromRole="Order_" ToRole="Product" />
-          <NavigationProperty Name="Order_by_Shift" Relationship="Self.FK__Order_by_S__id_O__76969D2E" FromRole="Order_" ToRole="Order_by_Shift" />
+          <NavigationProperty Name="OrderbyShift" Relationship="Self.FK__Order_by_S__id_O__76969D2E" FromRole="Order_" ToRole="OrderbyShift" />
         </EntityType>
-        <EntityType Name="Order_by_Shift">
+        <EntityType Name="OrderbyShift">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="id_WS" Type="Int32" />
           <Property Name="id_O" Type="Int32" />
-          <NavigationProperty Name="Order_" Relationship="Self.FK__Order_by_S__id_O__76969D2E" FromRole="Order_by_Shift" ToRole="Order_" />
-          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Order_by___id_WS__75A278F5" FromRole="Order_by_Shift" ToRole="Work_Shift" />
+          <NavigationProperty Name="Order_" Relationship="Self.FK__Order_by_S__id_O__76969D2E" FromRole="OrderbyShift" ToRole="Order_" />
+          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Order_by___id_WS__75A278F5" FromRole="OrderbyShift" ToRole="Work_Shift" />
         </EntityType>
         <EntityType Name="Paint">
           <Key>
@@ -520,7 +534,8 @@
           <Property Name="Name_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Sizes_l_w_h_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Thickness_P" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <Property Name="Size_P" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Size_Value_P" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Size_P" Type="Decimal" Precision="10" Scale="2" />
           <NavigationProperty Name="Order_" Relationship="Self.FK__Order___Product__66603565" FromRole="Product" ToRole="Order_" />
           <NavigationProperty Name="Products_Warehouse" Relationship="Self.FK__Products_Wa__Id___5DCAEF64" FromRole="Product" ToRole="Products_Warehouse" />
         </EntityType>
@@ -553,6 +568,16 @@
           <NavigationProperty Name="Costumables" Relationship="Self.FK__Shift_Cost__id_C__6EF57B66" FromRole="Shift_Costumables" ToRole="Costumables" />
           <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Shift_Cos__id_WS__6E01572D" FromRole="Shift_Costumables" ToRole="Work_Shift" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="User_App">
           <Key>
             <PropertyRef Name="id_U" />
@@ -571,7 +596,7 @@
           <Property Name="Date_WS" Type="DateTime" Precision="0" />
           <Property Name="Master_" Type="Int32" />
           <NavigationProperty Name="Master_1" Relationship="Self.FK__Work_Shif__Maste__6B24EA82" FromRole="Work_Shift" ToRole="Master_" />
-          <NavigationProperty Name="Order_by_Shift" Relationship="Self.FK__Order_by___id_WS__75A278F5" FromRole="Work_Shift" ToRole="Order_by_Shift" />
+          <NavigationProperty Name="OrderbyShift" Relationship="Self.FK__Order_by___id_WS__75A278F5" FromRole="Work_Shift" ToRole="OrderbyShift" />
           <NavigationProperty Name="Shift_Composition" Relationship="Self.FK__Shift_Com__id_WS__71D1E811" FromRole="Work_Shift" ToRole="Shift_Composition" />
           <NavigationProperty Name="Shift_Costumables" Relationship="Self.FK__Shift_Cos__id_WS__6E01572D" FromRole="Work_Shift" ToRole="Shift_Costumables" />
         </EntityType>
@@ -697,24 +722,24 @@
         </Association>
         <Association Name="FK__Order_by_S__id_O__76969D2E">
           <End Role="Order_" Type="Self.Order_" Multiplicity="0..1" />
-          <End Role="Order_by_Shift" Type="Self.Order_by_Shift" Multiplicity="*" />
+          <End Role="OrderbyShift" Type="Self.OrderbyShift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order_">
               <PropertyRef Name="id_O" />
             </Principal>
-            <Dependent Role="Order_by_Shift">
+            <Dependent Role="OrderbyShift">
               <PropertyRef Name="id_O" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Order_by___id_WS__75A278F5">
           <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
-          <End Role="Order_by_Shift" Type="Self.Order_by_Shift" Multiplicity="*" />
+          <End Role="OrderbyShift" Type="Self.OrderbyShift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Work_Shift">
               <PropertyRef Name="id_WS" />
             </Principal>
-            <Dependent Role="Order_by_Shift">
+            <Dependent Role="OrderbyShift">
               <PropertyRef Name="id_WS" />
             </Dependent>
           </ReferentialConstraint>
@@ -767,13 +792,13 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Perfomance_ArtistEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="Entities_Perfomance_Artist" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Costumables" EntityType="Self.Costumables" />
           <EntitySet Name="Costumables_Warehouse" EntityType="Self.Costumables_Warehouse" />
           <EntitySet Name="Employers" EntityType="Self.Employers" />
           <EntitySet Name="Master_" EntityType="Self.Master_" />
           <EntitySet Name="Order_" EntityType="Self.Order_" />
-          <EntitySet Name="Order_by_Shift" EntityType="Self.Order_by_Shift" />
+          <EntitySet Name="OrderbyShift" EntityType="Self.OrderbyShift" />
           <EntitySet Name="Paint" EntityType="Self.Paint" />
           <EntitySet Name="Paint_Warehouse" EntityType="Self.Paint_Warehouse" />
           <EntitySet Name="Positions" EntityType="Self.Positions" />
@@ -781,6 +806,7 @@
           <EntitySet Name="Products_Warehouse" EntityType="Self.Products_Warehouse" />
           <EntitySet Name="Shift_Composition" EntityType="Self.Shift_Composition" />
           <EntitySet Name="Shift_Costumables" EntityType="Self.Shift_Costumables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="User_App" EntityType="Self.User_App" />
           <EntitySet Name="Work_Shift" EntityType="Self.Work_Shift" />
           <AssociationSet Name="FK__Costumables__Id___60A75C0F" Association="Self.FK__Costumables__Id___60A75C0F">
@@ -825,11 +851,11 @@
           </AssociationSet>
           <AssociationSet Name="FK__Order_by_S__id_O__76969D2E" Association="Self.FK__Order_by_S__id_O__76969D2E">
             <End Role="Order_" EntitySet="Order_" />
-            <End Role="Order_by_Shift" EntitySet="Order_by_Shift" />
+            <End Role="OrderbyShift" EntitySet="OrderbyShift" />
           </AssociationSet>
           <AssociationSet Name="FK__Order_by___id_WS__75A278F5" Association="Self.FK__Order_by___id_WS__75A278F5">
             <End Role="Work_Shift" EntitySet="Work_Shift" />
-            <End Role="Order_by_Shift" EntitySet="Order_by_Shift" />
+            <End Role="OrderbyShift" EntitySet="OrderbyShift" />
           </AssociationSet>
           <AssociationSet Name="FK__Paint_Wareh__Id___6383C8BA" Association="Self.FK__Paint_Wareh__Id___6383C8BA">
             <End Role="Paint" EntitySet="Paint" />
@@ -853,7 +879,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище Perfomance_ArtistModelContainer" CdmEntityContainer="Perfomance_ArtistEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище Perfomance_ArtistModelContainer" CdmEntityContainer="Entities_Perfomance_Artist">
           <EntitySetMapping Name="Costumables">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Costumables">
               <MappingFragment StoreEntitySet="Costumables">
@@ -901,13 +927,14 @@
                 <ScalarProperty Name="Paint" ColumnName="Paint" />
                 <ScalarProperty Name="Master_" ColumnName="Master_" />
                 <ScalarProperty Name="Amount_Product" ColumnName="Amount_Product" />
-                <ScalarProperty Name="Total_Area" ColumnName="Total_Area" />
+                <ScalarProperty Name="Total_Area_Value" ColumnName="Total_Area_Value" />
+                <ScalarProperty Name="Tatal_Area" ColumnName="Tatal_Area" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="Order_by_Shift">
-            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Order_by_Shift">
-              <MappingFragment StoreEntitySet="Order_by_Shift">
+          <EntitySetMapping Name="OrderbyShift">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.OrderbyShift">
+              <MappingFragment StoreEntitySet="OrderbyShift">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_WS" ColumnName="id_WS" />
                 <ScalarProperty Name="id_O" ColumnName="id_O" />
@@ -949,6 +976,7 @@
                 <ScalarProperty Name="Name_P" ColumnName="Name_P" />
                 <ScalarProperty Name="Sizes_l_w_h_P" ColumnName="Sizes_l_w_h_P" />
                 <ScalarProperty Name="Thickness_P" ColumnName="Thickness_P" />
+                <ScalarProperty Name="Size_Value_P" ColumnName="Size_Value_P" />
                 <ScalarProperty Name="Size_P" ColumnName="Size_P" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -977,6 +1005,17 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_WS" ColumnName="id_WS" />
                 <ScalarProperty Name="id_C" ColumnName="id_C" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

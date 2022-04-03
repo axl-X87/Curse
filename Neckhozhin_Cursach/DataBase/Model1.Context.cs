@@ -13,10 +13,10 @@ namespace Neckhozhin_Cursach.DataBase
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Perfomance_ArtistEntities : DbContext
+    public partial class Entities_Perfomance_Artist : DbContext
     {
-        public Perfomance_ArtistEntities()
-            : base("name=Perfomance_ArtistEntities")
+        public Entities_Perfomance_Artist()
+            : base("name=Entities_Perfomance_Artist")
         {
         }
     
@@ -30,7 +30,7 @@ namespace Neckhozhin_Cursach.DataBase
         public virtual DbSet<Employers> Employers { get; set; }
         public virtual DbSet<Master_> Master_ { get; set; }
         public virtual DbSet<Order_> Order_ { get; set; }
-        public virtual DbSet<Order_by_Shift> Order_by_Shift { get; set; }
+        public virtual DbSet<OrderbyShift> OrderbyShift { get; set; }
         public virtual DbSet<Paint> Paint { get; set; }
         public virtual DbSet<Paint_Warehouse> Paint_Warehouse { get; set; }
         public virtual DbSet<Positions> Positions { get; set; }
@@ -38,6 +38,7 @@ namespace Neckhozhin_Cursach.DataBase
         public virtual DbSet<Products_Warehouse> Products_Warehouse { get; set; }
         public virtual DbSet<Shift_Composition> Shift_Composition { get; set; }
         public virtual DbSet<Shift_Costumables> Shift_Costumables { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User_App> User_App { get; set; }
         public virtual DbSet<Work_Shift> Work_Shift { get; set; }
     }
