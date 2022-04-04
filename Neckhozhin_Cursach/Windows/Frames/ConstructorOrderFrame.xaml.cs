@@ -85,7 +85,7 @@ namespace Neckhozhin_Cursach.Windows.Frames
         {
             try
             {
-                //ShowColorB.Background = (Brush)new BrushConverter().ConvertFromString();
+                ShowColorB.Background = (Brush)new BrushConverter().ConvertFromString(DataBaseConnection.entities.Paint.Where(i => i.id_P == (PaintListCB.SelectedIndex + 1)).Select(i => i.ISO_P).FirstOrDefault());
             }
             catch (Exception)
             {
