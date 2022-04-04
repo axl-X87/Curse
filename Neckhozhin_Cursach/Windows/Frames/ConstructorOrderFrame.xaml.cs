@@ -54,7 +54,7 @@ namespace Neckhozhin_Cursach.Windows.Frames
 
         private void NameProductsearchTb_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+           
         }
 
         private void ProductListCB_DropDownOpened(object sender, EventArgs e)
@@ -83,7 +83,14 @@ namespace Neckhozhin_Cursach.Windows.Frames
 
         private void PaintListCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            try
+            {
+                //ShowColorB.Background = (Brush)new BrushConverter().ConvertFromString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
