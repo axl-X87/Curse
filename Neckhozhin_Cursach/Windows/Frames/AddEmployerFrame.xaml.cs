@@ -42,13 +42,25 @@ namespace Neckhozhin_Cursach.Windows.Frames
                 emp.Surname_E = SurnameEmployer.Text;
                 emp.Name_E = NameEmployer.Text;
                 emp.Patronymic_e = PatronymicEmployer.Text;
-                emp.Position_E = (Convert.ToInt32(Test1.SelectedIndex) + 1);
+                emp.Position_E = (Convert.ToInt32(EmployeePositionCB.SelectedIndex) + 1);
                 DataBaseConnection.entities.Employers.Add(emp);
                 DataBaseConnection.entities.SaveChanges();
             }
             catch (Exception)
             {
                 MessageBox.Show("Обратитесь к администратору", "Ошибка сохранения", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void EmployeePositionCB_DropDownOpened(object sender, EventArgs e)
+        {
+            try
+            {
+                EmployeePositionCB.ItemsSource = DataBaseConnection.entities.Positions.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
     }

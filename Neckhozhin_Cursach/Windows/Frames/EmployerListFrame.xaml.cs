@@ -36,7 +36,26 @@ namespace Neckhozhin_Cursach.Windows.Frames
         {
             try
             {
-                EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.ToList();
+                if (EmploeeFilterCB.SelectedIndex == -1)
+                {
+                    EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.ToList();
+                }
+                else
+                {
+                    EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.Where(i => i.Position_E == (EmploeeFilterCB.SelectedIndex + 1)).ToList();
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void EmploeeFilterCB_DropDownOpened(object sender, EventArgs e)
+        {
+            try
+            {
+                 EmploeeFilterCB.ItemsSource = DataBaseConnection.entities.Positions.ToList();
             }
             catch (Exception)
             {
