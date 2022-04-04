@@ -30,15 +30,17 @@ namespace Neckhozhin_Cursach.Windows.Frames
 
         private void ShowOrders_Click(object sender, RoutedEventArgs e)
         {
-            OrderVL.ItemsSource = DataBaseConnection.entities.Order_.ToList();
+            try
+            {
+                OrderVL.ItemsSource = DataBaseConnection.entities.Order_.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void OrderVL_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            
-        }
-
-        private void Test666_Click(object sender, RoutedEventArgs e)
         {
 
         }

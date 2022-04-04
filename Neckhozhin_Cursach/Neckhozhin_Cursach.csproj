@@ -117,6 +117,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Class\DataBaseConnection.cs" />
+    <Compile Include="Class\DataBaseQueryConnect.cs" />
     <Compile Include="Class\QueryUsing.cs" />
     <Compile Include="DataBase\Costumables.cs">
       <DependentUpon>Model1.tt</DependentUpon>

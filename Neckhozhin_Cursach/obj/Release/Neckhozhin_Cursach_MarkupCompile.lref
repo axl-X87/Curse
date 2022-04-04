@@ -1,10 +1,15 @@
 ﻿
-FO:\Course_Neck\Neckhozhin_Cursach\App.xaml;;
-FO:\Course_Neck\Neckhozhin_Cursach\Windows\Frames\AddEmployerFrame.xaml;;
-FO:\Course_Neck\Neckhozhin_Cursach\Windows\Frames\ConstructorOrderFrame.xaml;;
-FO:\Course_Neck\Neckhozhin_Cursach\Windows\Frames\Employer.xaml;;
-FO:\Course_Neck\Neckhozhin_Cursach\Windows\Frames\EmployerListFrame.xaml;;
-FO:\Course_Neck\Neckhozhin_Cursach\Windows\Frames\LoginFrame.xaml;;
-FO:\Course_Neck\Neckhozhin_Cursach\Windows\Frames\OrderCompositionFrame.xaml;;
-FO:\Course_Neck\Neckhozhin_Cursach\Windows\MainWindow.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\App.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\AddEmployerFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\ConstructorOrderFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\CreateSupply.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\Employer.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\EmployerListFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\LoginFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\OrderCompositionFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\SelectWarehouseFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\WarehouseCostumablesFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\WarehouseDetailsFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\Frames\WarehousePaintFrame.xaml;;
+FO:\Neck_V2\Neckhozhin_Cursach\Windows\MainWindow.xaml;;
 

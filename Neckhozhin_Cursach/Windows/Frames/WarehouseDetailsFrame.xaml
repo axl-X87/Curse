@@ -19,21 +19,25 @@
                 <StackPanel>
                     <TextBlock Text="Найти деталь:" Margin="10 20" Style="{StaticResource TextBlStyle}"/>
                     <TextBox Style="{StaticResource TextBxStyle}" x:Name="FilterNameTbx" Height="35" MaxWidth="450" Margin="10 10"/>
-                    <Button x:Name="FilterNameBtn" Content="Выбрать по наименованию" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button x:Name="FilterNameBtn" Click="FilterNameBtn_Click" Content="Выбрать по наименованию" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Поиск по толщине детали" Margin="10">
                 <StackPanel>
                     <TextBlock Text="Найти деталь:" Margin="10 20" Style="{StaticResource TextBlStyle}"/>
                     <TextBox Style="{StaticResource TextBxStyle}" x:Name="FilterThicknessTbx" Height="35" MaxWidth="450" Margin="10 10"/>
-                    <Button Content="Выбрать по толщине" x:Name="FilterThicknessBtn" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Выбрать по толщине" x:Name="FilterThicknessBtn" Click="FilterThicknessBtn_Click" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-        <ListView Grid.Column="1">
+        <ListView Grid.Column="1" x:Name="ProductListLV">
             <ListView.View>
                 <GridView>
-                    
+                    <GridViewColumn DisplayMemberBinding="{Binding Product.Name_P}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Product.Thickness_P}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Product.Size_Value_P}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Product.Size_P}"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Reminder}"/>
                 </GridView>
             </ListView.View>
         </ListView>

@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Neckhozhin_Cursach.DataBase;
+using Neckhozhin_Cursach.Class;
 
 namespace Neckhozhin_Cursach.Windows.Frames
 {
@@ -23,6 +25,30 @@ namespace Neckhozhin_Cursach.Windows.Frames
         public WarehouseDetailsFrame()
         {
             InitializeComponent();
+        }
+
+        private void FilterNameBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ProductListLV.ItemsSource = DataBaseConnection.entities.Products_Warehouse.Where(i => i.Product.Name_P.Contains(FilterNameTbx.Text)).ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void FilterThicknessBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                ProductListLV.ItemsSource = DataBaseConnection.entities.Products_Warehouse.Where(i => i.Product.Name_P.Contains(FilterThicknessTbx.Text)).ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

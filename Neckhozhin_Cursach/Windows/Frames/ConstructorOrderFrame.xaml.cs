@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,12 +59,26 @@ namespace Neckhozhin_Cursach.Windows.Frames
 
         private void ProductListCB_DropDownOpened(object sender, EventArgs e)
         {
-            ProductListCB.ItemsSource = DataBaseConnection.entities.Product.ToList();
+            try
+            {
+                ProductListCB.ItemsSource = DataBaseConnection.entities.Product.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void PaintListCB_DropDownOpened(object sender, EventArgs e)
         {
-            PaintListCB.ItemsSource = DataBaseConnection.entities.Paint.ToList();
+            try
+            {
+                ProductListCB.ItemsSource = DataBaseConnection.entities.Paint.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void PaintListCB_SelectionChanged(object sender, SelectionChangedEventArgs e)

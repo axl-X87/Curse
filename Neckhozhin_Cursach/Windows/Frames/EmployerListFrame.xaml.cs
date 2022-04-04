@@ -34,12 +34,14 @@ namespace Neckhozhin_Cursach.Windows.Frames
 
         private void CreatorTest_Click(object sender, RoutedEventArgs e)
         {
-            EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.ToList();
-        }
-
-        public static implicit operator Frame(EmployerListFrame v)
-        {
-            throw new NotImplementedException();
+            try
+            {
+                EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }
