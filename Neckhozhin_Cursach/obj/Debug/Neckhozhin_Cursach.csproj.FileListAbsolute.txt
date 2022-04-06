@@ -192,3 +192,5 @@ O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.CoreCompileInp
 O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.csproj.CopyComplete
 O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.exe
 O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.pdb
+O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Order.g.cs
+O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Order.baml

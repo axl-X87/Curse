@@ -88,6 +88,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Windows\Frames\Order.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Windows\Frames\OrderCompositionFrame.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -199,6 +203,9 @@
     </Compile>
     <Compile Include="Windows\Frames\LoginFrame.xaml.cs">
       <DependentUpon>LoginFrame.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\Frames\Order.xaml.cs">
+      <DependentUpon>Order.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\Frames\OrderCompositionFrame.xaml.cs">
       <DependentUpon>OrderCompositionFrame.xaml</DependentUpon>

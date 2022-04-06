@@ -25,6 +25,14 @@ namespace Neckhozhin_Cursach.Windows.Frames
         public WarehouseDetailsFrame()
         {
             InitializeComponent();
+            try
+            {
+                ProductListLV.ItemsSource = DataBaseConnection.entities.Products_Warehouse.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void FilterNameBtn_Click(object sender, RoutedEventArgs e)

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 O:\Neck_V2\Neckhozhin_Cursach\App.xaml
-12-52492625
+131250540732
 2-290982251
-39-1600450152
+401975198047
 18-1262795441
-Windows\Frames\AddEmployerFrame.xaml;Windows\Frames\ConstructorOrderFrame.xaml;Windows\Frames\CreateSupply.xaml;Windows\Frames\Employer.xaml;Windows\Frames\EmployerListFrame.xaml;Windows\Frames\LoginFrame.xaml;Windows\Frames\OrderCompositionFrame.xaml;Windows\Frames\SelectWarehouseFrame.xaml;Windows\Frames\WarehouseCostumablesFrame.xaml;Windows\Frames\WarehouseDetailsFrame.xaml;Windows\Frames\WarehousePaintFrame.xaml;Windows\MainWindow.xaml;
+Windows\Frames\AddEmployerFrame.xaml;Windows\Frames\ConstructorOrderFrame.xaml;Windows\Frames\CreateSupply.xaml;Windows\Frames\Employer.xaml;Windows\Frames\EmployerListFrame.xaml;Windows\Frames\LoginFrame.xaml;Windows\Frames\Order.xaml;Windows\Frames\OrderCompositionFrame.xaml;Windows\Frames\SelectWarehouseFrame.xaml;Windows\Frames\WarehouseCostumablesFrame.xaml;Windows\Frames\WarehouseDetailsFrame.xaml;Windows\Frames\WarehousePaintFrame.xaml;Windows\MainWindow.xaml;
 
 True
 

@@ -19,21 +19,25 @@
                 <StackPanel>
                     <TextBlock Text="Найти краску:" Margin="10 20" Style="{StaticResource TextBlStyle}"/>
                     <TextBox Style="{StaticResource TextBxStyle}" x:Name="FilterNamePaintTbx" Height="35" MaxWidth="450" Margin="10 10"/>
-                    <Button Content="Выбрать по наименованию" x:Name="FilterNamePaintBtn" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Выбрать по наименованию" x:Name="FilterNamePaintBtn" Click="FilterNamePaintBtn_Click" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Поиск по ISO краски" Margin="10">
                 <StackPanel>
                     <TextBlock Text="Найти краску:" Margin="10 20" Style="{StaticResource TextBlStyle}"/>
                     <TextBox Style="{StaticResource TextBxStyle}" x:Name="FiltertISOTbx" Height="35" MaxWidth="450" Margin="10 10"/>
-                    <Button Content="Выбрать по ISO" x:Name="FilterISOBtn" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Выбрать по ISO" x:Name="FilterISOBtn" Click="FilterISOBtn_Click" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-        <ListView Grid.Column="1">
+        <ListView Grid.Column="1" x:Name="PaintLV">
             <ListView.View>
                 <GridView>
-
+                    <GridViewColumn DisplayMemberBinding="{Binding Paint.Name_P}" Header="Название краски"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Paint.Name_Color_P}" Header="Название цвета"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Paint.ISO_P}" Header="ISO"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Paint.Manufacter_P}" Header="Производитель"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Reminder_P}" Header="Остаток на складе"/>
                 </GridView>
             </ListView.View>
         </ListView>

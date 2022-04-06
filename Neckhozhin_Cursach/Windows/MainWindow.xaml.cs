@@ -32,17 +32,7 @@ namespace Neckhozhin_Cursach
             MainFrame.Navigate(new Employer());
         }
 
-
-        private void OrderComposition_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new OrderCompositionFrame());
-        }
-
-        private void Test_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new ConstructorOrderFrame());
-        }
-
+       
         private void Warehouse_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new SelectWarehouseFrame());
@@ -51,6 +41,11 @@ namespace Neckhozhin_Cursach
         private void CreateSupply_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new CreateSupply());
+        }
+
+        private void Order_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new Order());
         }
     }
 }

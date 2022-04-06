@@ -19,21 +19,24 @@
                 <StackPanel>
                     <TextBlock Text="Найти расходный материал:" Margin="10 20" Style="{StaticResource TextBlStyle}"/>
                     <TextBox Style="{StaticResource TextBxStyle}" x:Name="FilterNameCostumableTbx" Height="35" MaxWidth="450" Margin="10 10"/>
-                    <Button Content="Выбрать по наименованию" x:Name="FilterNameCostumableBtn" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Выбрать по наименованию" x:Name="FilterNameCostumableBtn" Click="FilterNameCostumableBtn_Click" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
                 </StackPanel>
             </GroupBox>
             <GroupBox Header="Поиск по материалу расходного материала" Margin="10">
                 <StackPanel>
                     <TextBlock Text="Найти расходный материал:" Margin="10 20" Style="{StaticResource TextBlStyle}"/>
                     <TextBox Style="{StaticResource TextBxStyle}" x:Name="FilterMaterialTbx" Height="35" MaxWidth="450" Margin="10 10"/>
-                    <Button Content="Выбрать по ISO" x:Name="FilterMaterialBtn" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
+                    <Button Content="Выбрать по материалу" x:Name="FilterMaterialBtn" Click="FilterMaterialBtn_Click" Margin="10 10" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Left"/>
                 </StackPanel>
             </GroupBox>
         </StackPanel>
-        <ListView Grid.Column="1">
+        <ListView Grid.Column="1" x:Name="CostumablesLV">
             <ListView.View>
                 <GridView>
-
+                    <GridViewColumn DisplayMemberBinding="{Binding Costumables.Name_C}" Header="Название"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Costumables.Material_C}" Header="Материал"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Costumables.Volume_Amount_C}" Header="Единица измерения"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Reminder_C}" Header="Остаток на складе"/>
                 </GridView>
             </ListView.View>
         </ListView>
