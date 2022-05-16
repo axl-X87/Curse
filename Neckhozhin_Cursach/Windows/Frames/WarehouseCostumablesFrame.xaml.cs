@@ -39,7 +39,7 @@ namespace Neckhozhin_Cursach.Windows.Frames
         {
             try
             {
-                CostumablesLV.ItemsSource = DataBaseConnection.entities.Costumables_Warehouse.Where(i => i.Costumables.Name_C.Contains(FilterNameCostumableTbx.Text)).ToList();
+                CostumablesLV.ItemsSource = DataBaseConnection.entities.Costumables.Where(i => i.Name_C.Contains(FilterNameCostumableTbx.Text)).ToList();
             }
             catch (Exception)
             {
@@ -51,7 +51,7 @@ namespace Neckhozhin_Cursach.Windows.Frames
         {
             try
             {
-                CostumablesLV.ItemsSource = DataBaseConnection.entities.Costumables_Warehouse.Where(i => i.Costumables.Name_C.Contains(FilterMaterialTbx.Text)).ToList();
+                CostumablesLV.ItemsSource = DataBaseConnection.entities.Costumables.Where(i => i.Name_C.Contains(FilterMaterialTbx.Text)).ToList();
             }
             catch (Exception)
             {

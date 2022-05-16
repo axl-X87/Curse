@@ -5,38 +5,44 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="1e34018792c142598aad36ef084b3c36" Name="Diagram1">
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Costumables" Width="1.5" PointX="7.5" PointY="12.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Costumables_Warehouse" Width="1.5" PointX="9.75" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Employers" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Master_" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Order_" Width="1.5" PointX="7.5" PointY="4.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.OrderbyShift" Width="1.5" PointX="9.75" PointY="4.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Paint" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Paint_Warehouse" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Positions" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Product" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Products_Warehouse" Width="1.5" PointX="7.5" PointY="16.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Shift_Composition" Width="1.5" PointX="9.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Shift_Costumables" Width="1.5" PointX="9.75" PointY="10.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.User_App" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="Perfomance_ArtistModel.Work_Shift" Width="1.5" PointX="7.5" PointY="8.375" IsExpanded="true" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Costumables__Id___60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Shift_Cost__id_C__6EF57B66" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Employers__Posit__52593CB8" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Master___id_E__5535A963" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Shift_Comp__id_E__72C60C4A" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__User_App__id_E__7C4F7684" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order___Master___68487DD7" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Work_Shif__Maste__6B24EA82" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order___Paint__6754599E" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order___Product__66603565" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order_by_S__id_O__76969D2E" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order_by___id_WS__75A278F5" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Paint_Wareh__Id___6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Products_Wa__Id___5DCAEF64" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Shift_Com__id_WS__71D1E811" ManuallyRouted="false" />
-        <AssociationConnector Association="Perfomance_ArtistModel.FK__Shift_Cos__id_WS__6E01572D" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Costumables" Width="1.5" PointX="7.5" PointY="15.375" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Costumables_Warehouse" Width="1.5" PointX="9.75" PointY="14.375" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Employers" Width="1.5" PointX="3" PointY="6" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Master_" Width="1.5" PointX="5.25" PointY="7.625" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Order_" Width="1.5" PointX="7.5" PointY="7.125" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.OrderbyShift" Width="1.5" PointX="12.75" PointY="9.5" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Paint" Width="1.5" PointX="5.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Paint_Warehouse" Width="1.5" PointX="7.5" PointY="1" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Positions" Width="1.5" PointX="0.75" PointY="6.375" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Product" Width="1.5" PointX="5.25" PointY="10.875" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Products_Warehouse" Width="1.5" PointX="7.5" PointY="19.125" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Shift_Composition" Width="1.5" PointX="9.75" PointY="8.875" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Shift_Costumables" Width="1.5" PointX="9.75" PointY="11.625" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Supply_Costumables" Width="1.5" PointX="9.75" PointY="17" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Supply_Details" Width="1.5" PointX="7.5" PointY="21.625" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Supply_Paint" Width="1.5" PointX="7.5" PointY="4.5" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="1" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.User_App" Width="1.5" PointX="5.25" PointY="4.75" />
+        <EntityTypeShape EntityType="Perfomance_ArtistModel.Work_Shift" Width="1.5" PointX="7.5" PointY="11.375" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Costumables__Id___60A75C0F" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Shift_Cost__id_C__6EF57B66" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Supply_Cos__id_P__1BC821DD" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Employers__Posit__52593CB8" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Master___id_E__5535A963" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Shift_Comp__id_E__72C60C4A" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__User_App__id_E__7C4F7684" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order___Master___68487DD7" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Work_Shif__Maste__6B24EA82" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order___Paint__6754599E" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order___Product__66603565" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order_by_S__id_O__76969D2E" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Order_by___id_WS__75A278F5" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Paint_Wareh__Id___6383C8BA" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Supply_Pai__id_P__18EBB532" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Products_Wa__Id___5DCAEF64" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Supply_Det__id_D__160F4887" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Shift_Com__id_WS__71D1E811" />
+        <AssociationConnector Association="Perfomance_ArtistModel.FK__Shift_Cos__id_WS__6E01572D" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

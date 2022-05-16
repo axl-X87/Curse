@@ -33,10 +33,9 @@
         <ListView Grid.Column="1" x:Name="PaintLV">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Paint.Name_P}" Header="Название краски"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Paint.Name_Color_P}" Header="Название цвета"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Paint.ISO_P}" Header="ISO"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Paint.Manufacter_P}" Header="Производитель"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Paint.Manufacter}" Header="Производитель"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Reminder_P}" Header="Остаток на складе"/>
                 </GridView>
             </ListView.View>

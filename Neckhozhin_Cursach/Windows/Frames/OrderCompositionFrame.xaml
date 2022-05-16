@@ -27,7 +27,8 @@
                     <GridViewColumn Header="Продукция" DisplayMemberBinding="{Binding Product1.Name_P}"/>
                     <GridViewColumn Header="Цвет" DisplayMemberBinding="{Binding Paint1.Name_Color_P}"/>
                     <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Amount_Product}"/>
-                    <GridViewColumn Header="Общая квадратура" DisplayMemberBinding="{Binding Total_Area}"/>
+                    <GridViewColumn Header="Общая квадратура" DisplayMemberBinding="{Binding Tatal_Area}"/>
+                    <GridViewColumn Header="Общая квадратура" DisplayMemberBinding="{Binding Total_Area_Value}"/>
                     <GridViewColumn Header="Мастер" DisplayMemberBinding="{Binding Master_1.Employers.Surname_E}"/>
                 </GridView>
             </ListView.View>

@@ -37,7 +37,7 @@
                     <GridViewColumn DisplayMemberBinding="{Binding Product.Thickness_P}" Header="Толщина"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Product.Size_P}" Header="Размер"/>
                     <GridViewColumn DisplayMemberBinding="{Binding Product.Size_Value_P}" Header="Единица измерения"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Reminder}" Header="Остаток на складе"/>
+                    <GridViewColumn DisplayMemberBinding="{Binding Reminder_P}" Header="Остаток на складе"/>
                 </GridView>
             </ListView.View>
         </ListView>

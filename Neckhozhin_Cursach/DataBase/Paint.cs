@@ -19,6 +19,7 @@ namespace Neckhozhin_Cursach.DataBase
         {
             this.Order_ = new HashSet<Order_>();
             this.Paint_Warehouse = new HashSet<Paint_Warehouse>();
+            this.Supply_Paint = new HashSet<Supply_Paint>();
         }
     
         public int id_P { get; set; }
@@ -30,5 +31,7 @@ namespace Neckhozhin_Cursach.DataBase
         public virtual ICollection<Order_> Order_ { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Paint_Warehouse> Paint_Warehouse { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Supply_Paint> Supply_Paint { get; set; }
     }
 }

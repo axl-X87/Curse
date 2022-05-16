@@ -19,7 +19,7 @@
             <RowDefinition Height="1*" />
             <RowDefinition Height="1*" />
         </Grid.RowDefinitions>
-        <TextBlock Text="Emploee list" Style="{StaticResource TextBlTitleStyle}" Margin="10 0"/>
+        <TextBlock Text="Список сотрудников" Style="{StaticResource TextBlTitleStyle}" Margin="10 0"/>
         <GroupBox Header="Сотрировка по должности"  Grid.Row="2" HorizontalAlignment="Left" VerticalAlignment="Center">
             <ComboBox x:Name="EmploeeFilterCB" Width="150" DropDownOpened="EmploeeFilterCB_DropDownOpened">
                 <ComboBox.ItemTemplate>
@@ -29,16 +29,30 @@
                 </ComboBox.ItemTemplate>
             </ComboBox>
         </GroupBox>
-        <Button x:Name="CreatorTest" Grid.Row="3" Click="CreatorTest_Click" Style="{StaticResource SystemButtonStyle}" Content="Test" Margin="50"/>
-        <ListView x:Name="EmployerLV" Grid.Column="1" Grid.RowSpan="4">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Surname_E}" Header="Фамилия"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Name_E}" Header="Имя"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Patronymic_e}" Header="Отчество"/>
-                    <GridViewColumn DisplayMemberBinding="{Binding Positions.Name_P}" Header="Должность"/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Button x:Name="CreatorTest" Grid.Row="3" Click="CreatorTest_Click" Style="{StaticResource SystemButtonStyle}" Content="Сортировать" Margin="50"/>
+        <Border Grid.Column="1" Grid.RowSpan="4" Margin="10" CornerRadius="5">
+            <ListView x:Name="EmployerLV" SelectionChanged="EmployerLV_SelectionChanged">
+                <ListView.View>
+                    <GridView>
+                        <GridViewColumn DisplayMemberBinding="{Binding Surname_E}" Header="Фамилия"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Name_E}" Header="Имя"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Patronymic_e}" Header="Отчество"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Positions.Name_P}" Header="Должность"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Border>
+        <Grid Grid.Row="1" x:Name="EmployerInfoG">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                <TextBlock Text="{Binding Surname_E}" FontSize="24"/>
+                <TextBlock Text="{Binding Name_E}" Margin="3 0" FontSize="24"/>
+                <TextBlock Text="{Binding Patronymic_e}" Margin="3 0" FontSize="24"/>
+            </StackPanel>
+            <TextBlock Grid.Row="1" VerticalAlignment="Center" Text="{Binding Positions.Name_P}" FontSize="24"/>
+        </Grid>
     </Grid>
 </Page>

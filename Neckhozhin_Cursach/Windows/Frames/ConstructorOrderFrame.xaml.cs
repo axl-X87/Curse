@@ -73,7 +73,7 @@ namespace Neckhozhin_Cursach.Windows.Frames
         {
             try
             {
-                ProductListCB.ItemsSource = DataBaseConnection.entities.Paint.ToList();
+                PaintListCB.ItemsSource = DataBaseConnection.entities.Paint.ToList();
             }
             catch (Exception)
             {

@@ -19,6 +19,7 @@ namespace Neckhozhin_Cursach.DataBase
         {
             this.Costumables_Warehouse = new HashSet<Costumables_Warehouse>();
             this.Shift_Costumables = new HashSet<Shift_Costumables>();
+            this.Supply_Costumables = new HashSet<Supply_Costumables>();
         }
     
         public int id_C { get; set; }
@@ -30,5 +31,7 @@ namespace Neckhozhin_Cursach.DataBase
         public virtual ICollection<Costumables_Warehouse> Costumables_Warehouse { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Shift_Costumables> Shift_Costumables { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Supply_Costumables> Supply_Costumables { get; set; }
     }
 }

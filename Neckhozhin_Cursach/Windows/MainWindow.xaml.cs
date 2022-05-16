@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Neckhozhin_Cursach.Class;
+using Neckhozhin_Cursach.DataBase;
 using Neckhozhin_Cursach.Windows.Frames;
 
 namespace Neckhozhin_Cursach
@@ -21,10 +23,14 @@ namespace Neckhozhin_Cursach
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
             PersonalFrame.Navigate(new LoginFrame());
+            MenuPanel.Visibility = Visibility.Hidden;
+            MenuShowHelper.menu = MenuPanel;
+            MenuShowHelper.frame = MainFrame;
         }
 
         private void Employer_Click(object sender, RoutedEventArgs e)
@@ -32,7 +38,6 @@ namespace Neckhozhin_Cursach
             MainFrame.Navigate(new Employer());
         }
 
-       
         private void Warehouse_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new SelectWarehouseFrame());

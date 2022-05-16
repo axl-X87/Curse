@@ -194,3 +194,7 @@ O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.exe
 O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Neckhozhin_Cursach.pdb
 O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Order.g.cs
 O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Order.baml
+C:\Users\Привет!\source\repos\Новая папка\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Order.g.cs
+C:\Users\Привет!\source\repos\Новая папка\Neckhozhin_Cursach\obj\Debug\Windows\Frames\Order.baml
+C:\Users\Привет!\source\repos\Новая папка\Neckhozhin_Cursach\obj\Debug\Windows\Frames\PersonalFrame.g.cs
+C:\Users\Привет!\source\repos\Новая папка\Neckhozhin_Cursach\obj\Debug\Windows\Frames\PersonalFrame.baml

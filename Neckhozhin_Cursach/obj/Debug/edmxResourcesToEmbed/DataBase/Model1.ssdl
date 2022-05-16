@@ -115,6 +115,30 @@
     <Property Name="id_WS" Type="int" />
     <Property Name="id_C" Type="int" />
   </EntityType>
+  <EntityType Name="Supply_Costumables">
+    <Key>
+      <PropertyRef Name="id_S" />
+    </Key>
+    <Property Name="id_S" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_P" Type="int" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
+  <EntityType Name="Supply_Details">
+    <Key>
+      <PropertyRef Name="id_S" />
+    </Key>
+    <Property Name="id_S" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_D" Type="int" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
+  <EntityType Name="Supply_Paint">
+    <Key>
+      <PropertyRef Name="id_S" />
+    </Key>
+    <Property Name="id_S" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_P" Type="int" />
+    <Property Name="Amount" Type="int" />
+  </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
       <PropertyRef Name="diagram_id" />
@@ -310,6 +334,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK__Supply_Cos__id_P__1BC821DD">
+    <End Role="Costumables" Type="Self.Costumables" Multiplicity="0..1" />
+    <End Role="Supply_Costumables" Type="Self.Supply_Costumables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Costumables">
+        <PropertyRef Name="id_C" />
+      </Principal>
+      <Dependent Role="Supply_Costumables">
+        <PropertyRef Name="id_P" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supply_Det__id_D__160F4887">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Supply_Details" Type="Self.Supply_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="id_P" />
+      </Principal>
+      <Dependent Role="Supply_Details">
+        <PropertyRef Name="id_D" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Supply_Pai__id_P__18EBB532">
+    <End Role="Paint" Type="Self.Paint" Multiplicity="0..1" />
+    <End Role="Supply_Paint" Type="Self.Supply_Paint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paint">
+        <PropertyRef Name="id_P" />
+      </Principal>
+      <Dependent Role="Supply_Paint">
+        <PropertyRef Name="id_P" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK__User_App__id_E__7C4F7684">
     <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
     <End Role="User_App" Type="Self.User_App" Multiplicity="*" />
@@ -348,6 +408,9 @@
     <EntitySet Name="Products_Warehouse" EntityType="Self.Products_Warehouse" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shift_Composition" EntityType="Self.Shift_Composition" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Shift_Costumables" EntityType="Self.Shift_Costumables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supply_Costumables" EntityType="Self.Supply_Costumables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supply_Details" EntityType="Self.Supply_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supply_Paint" EntityType="Self.Supply_Paint" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User_App" EntityType="Self.User_App" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Work_Shift" EntityType="Self.Work_Shift" Schema="dbo" store:Type="Tables" />
@@ -406,6 +469,18 @@
     <AssociationSet Name="FK__Shift_Cost__id_C__6EF57B66" Association="Self.FK__Shift_Cost__id_C__6EF57B66">
       <End Role="Costumables" EntitySet="Costumables" />
       <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supply_Cos__id_P__1BC821DD" Association="Self.FK__Supply_Cos__id_P__1BC821DD">
+      <End Role="Costumables" EntitySet="Costumables" />
+      <End Role="Supply_Costumables" EntitySet="Supply_Costumables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supply_Det__id_D__160F4887" Association="Self.FK__Supply_Det__id_D__160F4887">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Supply_Details" EntitySet="Supply_Details" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Supply_Pai__id_P__18EBB532" Association="Self.FK__Supply_Pai__id_P__18EBB532">
+      <End Role="Paint" EntitySet="Paint" />
+      <End Role="Supply_Paint" EntitySet="Supply_Paint" />
     </AssociationSet>
     <AssociationSet Name="FK__User_App__id_E__7C4F7684" Association="Self.FK__User_App__id_E__7C4F7684">
       <End Role="Employers" EntitySet="Employers" />

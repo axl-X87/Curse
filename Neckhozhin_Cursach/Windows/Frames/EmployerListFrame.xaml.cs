@@ -26,24 +26,9 @@ namespace Neckhozhin_Cursach.Windows.Frames
         public EmployerListFrame()
         {
             InitializeComponent();
-        }
-
-        private void Employee_Test_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
-
-        private void CreatorTest_Click(object sender, RoutedEventArgs e)
-        {
             try
             {
-                if (EmploeeFilterCB.SelectedIndex == -1)
-                {
-                    EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.ToList();
-                }
-                else
-                {
-                    EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.Where(i => i.Position_E == (EmploeeFilterCB.SelectedIndex + 1)).ToList();
-                }
+                EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.ToList();
             }
             catch (Exception)
             {
@@ -51,11 +36,33 @@ namespace Neckhozhin_Cursach.Windows.Frames
             }
         }
 
+        private void Employee_Test_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
+
+        private void CreatorTest_Click(object sender, RoutedEventArgs e)
+        {
+            EmployerLV.ItemsSource = DataBaseConnection.entities.Employers.Where(i => i.Position_E == (EmploeeFilterCB.SelectedIndex + 1)).ToList();
+        }
+
         private void EmploeeFilterCB_DropDownOpened(object sender, EventArgs e)
         {
             try
             {
-                 EmploeeFilterCB.ItemsSource = DataBaseConnection.entities.Positions.ToList();
+                EmploeeFilterCB.ItemsSource = DataBaseConnection.entities.Positions.ToList();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Обратитесь к администратору", "Ошибка вывода", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void EmployerLV_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                EmployerInfoG.DataContext = DataBaseConnection.entities.Employers.Where(i => i.id_E == EmployerLV.SelectedIndex + 1).FirstOrDefault(); ;
             }
             catch (Exception)
             {

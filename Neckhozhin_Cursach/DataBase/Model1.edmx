@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Perfomance_ArtistModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище Perfomance_ArtistModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Costumables">
           <Key>
             <PropertyRef Name="id_C" />
@@ -119,6 +119,30 @@
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="id_WS" Type="int" />
           <Property Name="id_C" Type="int" />
+        </EntityType>
+        <EntityType Name="Supply_Costumables">
+          <Key>
+            <PropertyRef Name="id_S" />
+          </Key>
+          <Property Name="id_S" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_P" Type="int" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="Supply_Details">
+          <Key>
+            <PropertyRef Name="id_S" />
+          </Key>
+          <Property Name="id_S" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_D" Type="int" />
+          <Property Name="Amount" Type="int" />
+        </EntityType>
+        <EntityType Name="Supply_Paint">
+          <Key>
+            <PropertyRef Name="id_S" />
+          </Key>
+          <Property Name="id_S" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_P" Type="int" />
+          <Property Name="Amount" Type="int" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -315,6 +339,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Supply_Cos__id_P__1BC821DD">
+          <End Role="Costumables" Type="Self.Costumables" Multiplicity="0..1" />
+          <End Role="Supply_Costumables" Type="Self.Supply_Costumables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Costumables">
+              <PropertyRef Name="id_C" />
+            </Principal>
+            <Dependent Role="Supply_Costumables">
+              <PropertyRef Name="id_P" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Supply_Det__id_D__160F4887">
+          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+          <End Role="Supply_Details" Type="Self.Supply_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Supply_Details">
+              <PropertyRef Name="id_D" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Supply_Pai__id_P__18EBB532">
+          <End Role="Paint" Type="Self.Paint" Multiplicity="0..1" />
+          <End Role="Supply_Paint" Type="Self.Supply_Paint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paint">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Supply_Paint">
+              <PropertyRef Name="id_P" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__User_App__id_E__7C4F7684">
           <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
           <End Role="User_App" Type="Self.User_App" Multiplicity="*" />
@@ -353,6 +413,9 @@
           <EntitySet Name="Products_Warehouse" EntityType="Self.Products_Warehouse" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shift_Composition" EntityType="Self.Shift_Composition" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Shift_Costumables" EntityType="Self.Shift_Costumables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supply_Costumables" EntityType="Self.Supply_Costumables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supply_Details" EntityType="Self.Supply_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Supply_Paint" EntityType="Self.Supply_Paint" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User_App" EntityType="Self.User_App" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Work_Shift" EntityType="Self.Work_Shift" Schema="dbo" store:Type="Tables" />
@@ -412,6 +475,18 @@
             <End Role="Costumables" EntitySet="Costumables" />
             <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
           </AssociationSet>
+          <AssociationSet Name="FK__Supply_Cos__id_P__1BC821DD" Association="Self.FK__Supply_Cos__id_P__1BC821DD">
+            <End Role="Costumables" EntitySet="Costumables" />
+            <End Role="Supply_Costumables" EntitySet="Supply_Costumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supply_Det__id_D__160F4887" Association="Self.FK__Supply_Det__id_D__160F4887">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Supply_Details" EntitySet="Supply_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supply_Pai__id_P__18EBB532" Association="Self.FK__Supply_Pai__id_P__18EBB532">
+            <End Role="Paint" EntitySet="Paint" />
+            <End Role="Supply_Paint" EntitySet="Supply_Paint" />
+          </AssociationSet>
           <AssociationSet Name="FK__User_App__id_E__7C4F7684" Association="Self.FK__User_App__id_E__7C4F7684">
             <End Role="Employers" EntitySet="Employers" />
             <End Role="User_App" EntitySet="User_App" />
@@ -421,21 +496,118 @@
             <End Role="Work_Shift" EntitySet="Work_Shift" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="Perfomance_ArtistModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities_Perfomance_Artist" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Costumables" EntityType="Perfomance_ArtistModel.Costumables" />
+          <EntitySet Name="Costumables_Warehouse" EntityType="Perfomance_ArtistModel.Costumables_Warehouse" />
+          <EntitySet Name="Employers" EntityType="Perfomance_ArtistModel.Employers" />
+          <EntitySet Name="Master_" EntityType="Perfomance_ArtistModel.Master_" />
+          <EntitySet Name="Order_" EntityType="Perfomance_ArtistModel.Order_" />
+          <EntitySet Name="OrderbyShift" EntityType="Perfomance_ArtistModel.OrderbyShift" />
+          <EntitySet Name="Paint" EntityType="Perfomance_ArtistModel.Paint" />
+          <EntitySet Name="Paint_Warehouse" EntityType="Perfomance_ArtistModel.Paint_Warehouse" />
+          <EntitySet Name="Positions" EntityType="Perfomance_ArtistModel.Positions" />
+          <EntitySet Name="Product" EntityType="Perfomance_ArtistModel.Product" />
+          <EntitySet Name="Products_Warehouse" EntityType="Perfomance_ArtistModel.Products_Warehouse" />
+          <EntitySet Name="Shift_Composition" EntityType="Perfomance_ArtistModel.Shift_Composition" />
+          <EntitySet Name="Shift_Costumables" EntityType="Perfomance_ArtistModel.Shift_Costumables" />
+          <EntitySet Name="Supply_Costumables" EntityType="Perfomance_ArtistModel.Supply_Costumables" />
+          <EntitySet Name="Supply_Details" EntityType="Perfomance_ArtistModel.Supply_Details" />
+          <EntitySet Name="Supply_Paint" EntityType="Perfomance_ArtistModel.Supply_Paint" />
+          <EntitySet Name="sysdiagrams" EntityType="Perfomance_ArtistModel.sysdiagrams" />
+          <EntitySet Name="User_App" EntityType="Perfomance_ArtistModel.User_App" />
+          <EntitySet Name="Work_Shift" EntityType="Perfomance_ArtistModel.Work_Shift" />
+          <AssociationSet Name="FK__Costumables__Id___60A75C0F" Association="Perfomance_ArtistModel.FK__Costumables__Id___60A75C0F">
+            <End Role="Costumables" EntitySet="Costumables" />
+            <End Role="Costumables_Warehouse" EntitySet="Costumables_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Cost__id_C__6EF57B66" Association="Perfomance_ArtistModel.FK__Shift_Cost__id_C__6EF57B66">
+            <End Role="Costumables" EntitySet="Costumables" />
+            <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supply_Cos__id_P__1BC821DD" Association="Perfomance_ArtistModel.FK__Supply_Cos__id_P__1BC821DD">
+            <End Role="Costumables" EntitySet="Costumables" />
+            <End Role="Supply_Costumables" EntitySet="Supply_Costumables" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Employers__Posit__52593CB8" Association="Perfomance_ArtistModel.FK__Employers__Posit__52593CB8">
+            <End Role="Positions" EntitySet="Positions" />
+            <End Role="Employers" EntitySet="Employers" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Master___id_E__5535A963" Association="Perfomance_ArtistModel.FK__Master___id_E__5535A963">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="Master_" EntitySet="Master_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Comp__id_E__72C60C4A" Association="Perfomance_ArtistModel.FK__Shift_Comp__id_E__72C60C4A">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="Shift_Composition" EntitySet="Shift_Composition" />
+          </AssociationSet>
+          <AssociationSet Name="FK__User_App__id_E__7C4F7684" Association="Perfomance_ArtistModel.FK__User_App__id_E__7C4F7684">
+            <End Role="Employers" EntitySet="Employers" />
+            <End Role="User_App" EntitySet="User_App" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Master___68487DD7" Association="Perfomance_ArtistModel.FK__Order___Master___68487DD7">
+            <End Role="Master_" EntitySet="Master_" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Work_Shif__Maste__6B24EA82" Association="Perfomance_ArtistModel.FK__Work_Shif__Maste__6B24EA82">
+            <End Role="Master_" EntitySet="Master_" />
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Paint__6754599E" Association="Perfomance_ArtistModel.FK__Order___Paint__6754599E">
+            <End Role="Paint" EntitySet="Paint" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order___Product__66603565" Association="Perfomance_ArtistModel.FK__Order___Product__66603565">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Order_" EntitySet="Order_" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_by_S__id_O__76969D2E" Association="Perfomance_ArtistModel.FK__Order_by_S__id_O__76969D2E">
+            <End Role="Order_" EntitySet="Order_" />
+            <End Role="OrderbyShift" EntitySet="OrderbyShift" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Order_by___id_WS__75A278F5" Association="Perfomance_ArtistModel.FK__Order_by___id_WS__75A278F5">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="OrderbyShift" EntitySet="OrderbyShift" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Paint_Wareh__Id___6383C8BA" Association="Perfomance_ArtistModel.FK__Paint_Wareh__Id___6383C8BA">
+            <End Role="Paint" EntitySet="Paint" />
+            <End Role="Paint_Warehouse" EntitySet="Paint_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supply_Pai__id_P__18EBB532" Association="Perfomance_ArtistModel.FK__Supply_Pai__id_P__18EBB532">
+            <End Role="Paint" EntitySet="Paint" />
+            <End Role="Supply_Paint" EntitySet="Supply_Paint" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Products_Wa__Id___5DCAEF64" Association="Perfomance_ArtistModel.FK__Products_Wa__Id___5DCAEF64">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Products_Warehouse" EntitySet="Products_Warehouse" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Supply_Det__id_D__160F4887" Association="Perfomance_ArtistModel.FK__Supply_Det__id_D__160F4887">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Supply_Details" EntitySet="Supply_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Com__id_WS__71D1E811" Association="Perfomance_ArtistModel.FK__Shift_Com__id_WS__71D1E811">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="Shift_Composition" EntitySet="Shift_Composition" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Shift_Cos__id_WS__6E01572D" Association="Perfomance_ArtistModel.FK__Shift_Cos__id_WS__6E01572D">
+            <End Role="Work_Shift" EntitySet="Work_Shift" />
+            <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="Costumables">
           <Key>
             <PropertyRef Name="id_C" />
           </Key>
           <Property Name="id_C" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name_C" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name_C" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Material_C" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Volume_Amount_C" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Costumables_Warehouse" Relationship="Self.FK__Costumables__Id___60A75C0F" FromRole="Costumables" ToRole="Costumables_Warehouse" />
-          <NavigationProperty Name="Shift_Costumables" Relationship="Self.FK__Shift_Cost__id_C__6EF57B66" FromRole="Costumables" ToRole="Shift_Costumables" />
+          <NavigationProperty Name="Costumables_Warehouse" Relationship="Perfomance_ArtistModel.FK__Costumables__Id___60A75C0F" FromRole="Costumables" ToRole="Costumables_Warehouse" />
+          <NavigationProperty Name="Shift_Costumables" Relationship="Perfomance_ArtistModel.FK__Shift_Cost__id_C__6EF57B66" FromRole="Costumables" ToRole="Shift_Costumables" />
+          <NavigationProperty Name="Supply_Costumables" Relationship="Perfomance_ArtistModel.FK__Supply_Cos__id_P__1BC821DD" FromRole="Costumables" ToRole="Supply_Costumables" />
         </EntityType>
         <EntityType Name="Costumables_Warehouse">
           <Key>
@@ -444,7 +616,7 @@
           <Property Name="id_W" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_" Type="Int32" />
           <Property Name="Reminder_C" Type="Int32" />
-          <NavigationProperty Name="Costumables" Relationship="Self.FK__Costumables__Id___60A75C0F" FromRole="Costumables_Warehouse" ToRole="Costumables" />
+          <NavigationProperty Name="Costumables" Relationship="Perfomance_ArtistModel.FK__Costumables__Id___60A75C0F" FromRole="Costumables_Warehouse" ToRole="Costumables" />
         </EntityType>
         <EntityType Name="Employers">
           <Key>
@@ -455,10 +627,10 @@
           <Property Name="Name_E" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Patronymic_e" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="Position_E" Type="Int32" />
-          <NavigationProperty Name="Positions" Relationship="Self.FK__Employers__Posit__52593CB8" FromRole="Employers" ToRole="Positions" />
-          <NavigationProperty Name="Master_" Relationship="Self.FK__Master___id_E__5535A963" FromRole="Employers" ToRole="Master_" />
-          <NavigationProperty Name="Shift_Composition" Relationship="Self.FK__Shift_Comp__id_E__72C60C4A" FromRole="Employers" ToRole="Shift_Composition" />
-          <NavigationProperty Name="User_App" Relationship="Self.FK__User_App__id_E__7C4F7684" FromRole="Employers" ToRole="User_App" />
+          <NavigationProperty Name="Positions" Relationship="Perfomance_ArtistModel.FK__Employers__Posit__52593CB8" FromRole="Employers" ToRole="Positions" />
+          <NavigationProperty Name="Master_" Relationship="Perfomance_ArtistModel.FK__Master___id_E__5535A963" FromRole="Employers" ToRole="Master_" />
+          <NavigationProperty Name="Shift_Composition" Relationship="Perfomance_ArtistModel.FK__Shift_Comp__id_E__72C60C4A" FromRole="Employers" ToRole="Shift_Composition" />
+          <NavigationProperty Name="User_App" Relationship="Perfomance_ArtistModel.FK__User_App__id_E__7C4F7684" FromRole="Employers" ToRole="User_App" />
         </EntityType>
         <EntityType Name="Master_">
           <Key>
@@ -467,9 +639,9 @@
           <Property Name="id_M" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="id_E" Type="Int32" />
           <Property Name="Expirience_M" Type="Int32" />
-          <NavigationProperty Name="Employers" Relationship="Self.FK__Master___id_E__5535A963" FromRole="Master_" ToRole="Employers" />
-          <NavigationProperty Name="Order_" Relationship="Self.FK__Order___Master___68487DD7" FromRole="Master_" ToRole="Order_" />
-          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Work_Shif__Maste__6B24EA82" FromRole="Master_" ToRole="Work_Shift" />
+          <NavigationProperty Name="Employers" Relationship="Perfomance_ArtistModel.FK__Master___id_E__5535A963" FromRole="Master_" ToRole="Employers" />
+          <NavigationProperty Name="Order_" Relationship="Perfomance_ArtistModel.FK__Order___Master___68487DD7" FromRole="Master_" ToRole="Order_" />
+          <NavigationProperty Name="Work_Shift" Relationship="Perfomance_ArtistModel.FK__Work_Shif__Maste__6B24EA82" FromRole="Master_" ToRole="Work_Shift" />
         </EntityType>
         <EntityType Name="Order_">
           <Key>
@@ -482,10 +654,10 @@
           <Property Name="Amount_Product" Type="Int32" />
           <Property Name="Total_Area_Value" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Tatal_Area" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="Master_1" Relationship="Self.FK__Order___Master___68487DD7" FromRole="Order_" ToRole="Master_" />
-          <NavigationProperty Name="Paint1" Relationship="Self.FK__Order___Paint__6754599E" FromRole="Order_" ToRole="Paint" />
-          <NavigationProperty Name="Product1" Relationship="Self.FK__Order___Product__66603565" FromRole="Order_" ToRole="Product" />
-          <NavigationProperty Name="OrderbyShift" Relationship="Self.FK__Order_by_S__id_O__76969D2E" FromRole="Order_" ToRole="OrderbyShift" />
+          <NavigationProperty Name="Master_1" Relationship="Perfomance_ArtistModel.FK__Order___Master___68487DD7" FromRole="Order_" ToRole="Master_" />
+          <NavigationProperty Name="Paint1" Relationship="Perfomance_ArtistModel.FK__Order___Paint__6754599E" FromRole="Order_" ToRole="Paint" />
+          <NavigationProperty Name="Product1" Relationship="Perfomance_ArtistModel.FK__Order___Product__66603565" FromRole="Order_" ToRole="Product" />
+          <NavigationProperty Name="OrderbyShift" Relationship="Perfomance_ArtistModel.FK__Order_by_S__id_O__76969D2E" FromRole="Order_" ToRole="OrderbyShift" />
         </EntityType>
         <EntityType Name="OrderbyShift">
           <Key>
@@ -494,19 +666,20 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="id_WS" Type="Int32" />
           <Property Name="id_O" Type="Int32" />
-          <NavigationProperty Name="Order_" Relationship="Self.FK__Order_by_S__id_O__76969D2E" FromRole="OrderbyShift" ToRole="Order_" />
-          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Order_by___id_WS__75A278F5" FromRole="OrderbyShift" ToRole="Work_Shift" />
+          <NavigationProperty Name="Order_" Relationship="Perfomance_ArtistModel.FK__Order_by_S__id_O__76969D2E" FromRole="OrderbyShift" ToRole="Order_" />
+          <NavigationProperty Name="Work_Shift" Relationship="Perfomance_ArtistModel.FK__Order_by___id_WS__75A278F5" FromRole="OrderbyShift" ToRole="Work_Shift" />
         </EntityType>
         <EntityType Name="Paint">
           <Key>
             <PropertyRef Name="id_P" />
           </Key>
           <Property Name="id_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name_Color_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name_Color_P" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="ISO_P" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Manufacter" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Order_" Relationship="Self.FK__Order___Paint__6754599E" FromRole="Paint" ToRole="Order_" />
-          <NavigationProperty Name="Paint_Warehouse" Relationship="Self.FK__Paint_Wareh__Id___6383C8BA" FromRole="Paint" ToRole="Paint_Warehouse" />
+          <NavigationProperty Name="Order_" Relationship="Perfomance_ArtistModel.FK__Order___Paint__6754599E" FromRole="Paint" ToRole="Order_" />
+          <NavigationProperty Name="Paint_Warehouse" Relationship="Perfomance_ArtistModel.FK__Paint_Wareh__Id___6383C8BA" FromRole="Paint" ToRole="Paint_Warehouse" />
+          <NavigationProperty Name="Supply_Paint" Relationship="Perfomance_ArtistModel.FK__Supply_Pai__id_P__18EBB532" FromRole="Paint" ToRole="Supply_Paint" />
         </EntityType>
         <EntityType Name="Paint_Warehouse">
           <Key>
@@ -515,7 +688,7 @@
           <Property Name="id_W" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_" Type="Int32" />
           <Property Name="Reminder_P" Type="Int32" />
-          <NavigationProperty Name="Paint" Relationship="Self.FK__Paint_Wareh__Id___6383C8BA" FromRole="Paint_Warehouse" ToRole="Paint" />
+          <NavigationProperty Name="Paint" Relationship="Perfomance_ArtistModel.FK__Paint_Wareh__Id___6383C8BA" FromRole="Paint_Warehouse" ToRole="Paint" />
         </EntityType>
         <EntityType Name="Positions">
           <Key>
@@ -524,20 +697,21 @@
           <Property Name="id_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name_P" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="Schedule_P" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Employers" Relationship="Self.FK__Employers__Posit__52593CB8" FromRole="Positions" ToRole="Employers" />
+          <NavigationProperty Name="Employers" Relationship="Perfomance_ArtistModel.FK__Employers__Posit__52593CB8" FromRole="Positions" ToRole="Employers" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
             <PropertyRef Name="id_P" />
           </Key>
           <Property Name="id_P" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Name_P" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Sizes_l_w_h_P" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="Thickness_P" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
           <Property Name="Size_Value_P" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="Size_P" Type="Decimal" Precision="10" Scale="2" />
-          <NavigationProperty Name="Order_" Relationship="Self.FK__Order___Product__66603565" FromRole="Product" ToRole="Order_" />
-          <NavigationProperty Name="Products_Warehouse" Relationship="Self.FK__Products_Wa__Id___5DCAEF64" FromRole="Product" ToRole="Products_Warehouse" />
+          <NavigationProperty Name="Order_" Relationship="Perfomance_ArtistModel.FK__Order___Product__66603565" FromRole="Product" ToRole="Order_" />
+          <NavigationProperty Name="Products_Warehouse" Relationship="Perfomance_ArtistModel.FK__Products_Wa__Id___5DCAEF64" FromRole="Product" ToRole="Products_Warehouse" />
+          <NavigationProperty Name="Supply_Details" Relationship="Perfomance_ArtistModel.FK__Supply_Det__id_D__160F4887" FromRole="Product" ToRole="Supply_Details" />
         </EntityType>
         <EntityType Name="Products_Warehouse">
           <Key>
@@ -546,7 +720,7 @@
           <Property Name="id_W" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Id_" Type="Int32" />
           <Property Name="Reminder_P" Type="Int32" />
-          <NavigationProperty Name="Product" Relationship="Self.FK__Products_Wa__Id___5DCAEF64" FromRole="Products_Warehouse" ToRole="Product" />
+          <NavigationProperty Name="Product" Relationship="Perfomance_ArtistModel.FK__Products_Wa__Id___5DCAEF64" FromRole="Products_Warehouse" ToRole="Product" />
         </EntityType>
         <EntityType Name="Shift_Composition">
           <Key>
@@ -555,8 +729,8 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="id_WS" Type="Int32" />
           <Property Name="id_E" Type="Int32" />
-          <NavigationProperty Name="Employers" Relationship="Self.FK__Shift_Comp__id_E__72C60C4A" FromRole="Shift_Composition" ToRole="Employers" />
-          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Shift_Com__id_WS__71D1E811" FromRole="Shift_Composition" ToRole="Work_Shift" />
+          <NavigationProperty Name="Employers" Relationship="Perfomance_ArtistModel.FK__Shift_Comp__id_E__72C60C4A" FromRole="Shift_Composition" ToRole="Employers" />
+          <NavigationProperty Name="Work_Shift" Relationship="Perfomance_ArtistModel.FK__Shift_Com__id_WS__71D1E811" FromRole="Shift_Composition" ToRole="Work_Shift" />
         </EntityType>
         <EntityType Name="Shift_Costumables">
           <Key>
@@ -565,14 +739,41 @@
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="id_WS" Type="Int32" />
           <Property Name="id_C" Type="Int32" />
-          <NavigationProperty Name="Costumables" Relationship="Self.FK__Shift_Cost__id_C__6EF57B66" FromRole="Shift_Costumables" ToRole="Costumables" />
-          <NavigationProperty Name="Work_Shift" Relationship="Self.FK__Shift_Cos__id_WS__6E01572D" FromRole="Shift_Costumables" ToRole="Work_Shift" />
+          <NavigationProperty Name="Costumables" Relationship="Perfomance_ArtistModel.FK__Shift_Cost__id_C__6EF57B66" FromRole="Shift_Costumables" ToRole="Costumables" />
+          <NavigationProperty Name="Work_Shift" Relationship="Perfomance_ArtistModel.FK__Shift_Cos__id_WS__6E01572D" FromRole="Shift_Costumables" ToRole="Work_Shift" />
+        </EntityType>
+        <EntityType Name="Supply_Costumables">
+          <Key>
+            <PropertyRef Name="id_S" />
+          </Key>
+          <Property Name="id_S" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_P" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <NavigationProperty Name="Costumables" Relationship="Perfomance_ArtistModel.FK__Supply_Cos__id_P__1BC821DD" FromRole="Supply_Costumables" ToRole="Costumables" />
+        </EntityType>
+        <EntityType Name="Supply_Details">
+          <Key>
+            <PropertyRef Name="id_S" />
+          </Key>
+          <Property Name="id_S" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_D" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <NavigationProperty Name="Product" Relationship="Perfomance_ArtistModel.FK__Supply_Det__id_D__160F4887" FromRole="Supply_Details" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Supply_Paint">
+          <Key>
+            <PropertyRef Name="id_S" />
+          </Key>
+          <Property Name="id_S" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_P" Type="Int32" />
+          <Property Name="Amount" Type="Int32" />
+          <NavigationProperty Name="Paint" Relationship="Perfomance_ArtistModel.FK__Supply_Pai__id_P__18EBB532" FromRole="Supply_Paint" ToRole="Paint" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
           <Property Name="principal_id" Type="Int32" Nullable="false" />
           <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="version" Type="Int32" />
@@ -586,7 +787,7 @@
           <Property Name="id_E" Type="Int32" />
           <Property Name="UserName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="UserPassword" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="Employers" Relationship="Self.FK__User_App__id_E__7C4F7684" FromRole="User_App" ToRole="Employers" />
+          <NavigationProperty Name="Employers" Relationship="Perfomance_ArtistModel.FK__User_App__id_E__7C4F7684" FromRole="User_App" ToRole="Employers" />
         </EntityType>
         <EntityType Name="Work_Shift">
           <Key>
@@ -595,14 +796,14 @@
           <Property Name="id_WS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Date_WS" Type="DateTime" Precision="0" />
           <Property Name="Master_" Type="Int32" />
-          <NavigationProperty Name="Master_1" Relationship="Self.FK__Work_Shif__Maste__6B24EA82" FromRole="Work_Shift" ToRole="Master_" />
-          <NavigationProperty Name="OrderbyShift" Relationship="Self.FK__Order_by___id_WS__75A278F5" FromRole="Work_Shift" ToRole="OrderbyShift" />
-          <NavigationProperty Name="Shift_Composition" Relationship="Self.FK__Shift_Com__id_WS__71D1E811" FromRole="Work_Shift" ToRole="Shift_Composition" />
-          <NavigationProperty Name="Shift_Costumables" Relationship="Self.FK__Shift_Cos__id_WS__6E01572D" FromRole="Work_Shift" ToRole="Shift_Costumables" />
+          <NavigationProperty Name="Master_1" Relationship="Perfomance_ArtistModel.FK__Work_Shif__Maste__6B24EA82" FromRole="Work_Shift" ToRole="Master_" />
+          <NavigationProperty Name="OrderbyShift" Relationship="Perfomance_ArtistModel.FK__Order_by___id_WS__75A278F5" FromRole="Work_Shift" ToRole="OrderbyShift" />
+          <NavigationProperty Name="Shift_Composition" Relationship="Perfomance_ArtistModel.FK__Shift_Com__id_WS__71D1E811" FromRole="Work_Shift" ToRole="Shift_Composition" />
+          <NavigationProperty Name="Shift_Costumables" Relationship="Perfomance_ArtistModel.FK__Shift_Cos__id_WS__6E01572D" FromRole="Work_Shift" ToRole="Shift_Costumables" />
         </EntityType>
         <Association Name="FK__Costumables__Id___60A75C0F">
-          <End Role="Costumables" Type="Self.Costumables" Multiplicity="0..1" />
-          <End Role="Costumables_Warehouse" Type="Self.Costumables_Warehouse" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Costumables" Role="Costumables" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Costumables_Warehouse" Role="Costumables_Warehouse" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Costumables">
               <PropertyRef Name="id_C" />
@@ -613,8 +814,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Shift_Cost__id_C__6EF57B66">
-          <End Role="Costumables" Type="Self.Costumables" Multiplicity="0..1" />
-          <End Role="Shift_Costumables" Type="Self.Shift_Costumables" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Costumables" Role="Costumables" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Shift_Costumables" Role="Shift_Costumables" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Costumables">
               <PropertyRef Name="id_C" />
@@ -624,9 +825,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Supply_Cos__id_P__1BC821DD">
+          <End Type="Perfomance_ArtistModel.Costumables" Role="Costumables" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Supply_Costumables" Role="Supply_Costumables" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Costumables">
+              <PropertyRef Name="id_C" />
+            </Principal>
+            <Dependent Role="Supply_Costumables">
+              <PropertyRef Name="id_P" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Employers__Posit__52593CB8">
-          <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
-          <End Role="Employers" Type="Self.Employers" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Positions" Role="Positions" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Employers" Role="Employers" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Positions">
               <PropertyRef Name="id_P" />
@@ -637,8 +850,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Master___id_E__5535A963">
-          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
-          <End Role="Master_" Type="Self.Master_" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Employers" Role="Employers" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Master_" Role="Master_" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employers">
               <PropertyRef Name="id_E" />
@@ -649,8 +862,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Shift_Comp__id_E__72C60C4A">
-          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
-          <End Role="Shift_Composition" Type="Self.Shift_Composition" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Employers" Role="Employers" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Shift_Composition" Role="Shift_Composition" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employers">
               <PropertyRef Name="id_E" />
@@ -661,8 +874,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__User_App__id_E__7C4F7684">
-          <End Role="Employers" Type="Self.Employers" Multiplicity="0..1" />
-          <End Role="User_App" Type="Self.User_App" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Employers" Role="Employers" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.User_App" Role="User_App" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employers">
               <PropertyRef Name="id_E" />
@@ -673,8 +886,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Order___Master___68487DD7">
-          <End Role="Master_" Type="Self.Master_" Multiplicity="0..1" />
-          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Master_" Role="Master_" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Order_" Role="Order_" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Master_">
               <PropertyRef Name="id_M" />
@@ -685,8 +898,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Work_Shif__Maste__6B24EA82">
-          <End Role="Master_" Type="Self.Master_" Multiplicity="0..1" />
-          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Master_" Role="Master_" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Work_Shift" Role="Work_Shift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Master_">
               <PropertyRef Name="id_M" />
@@ -697,8 +910,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Order___Paint__6754599E">
-          <End Role="Paint" Type="Self.Paint" Multiplicity="0..1" />
-          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Paint" Role="Paint" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Order_" Role="Order_" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paint">
               <PropertyRef Name="id_P" />
@@ -709,8 +922,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Order___Product__66603565">
-          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
-          <End Role="Order_" Type="Self.Order_" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Order_" Role="Order_" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="id_P" />
@@ -721,8 +934,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Order_by_S__id_O__76969D2E">
-          <End Role="Order_" Type="Self.Order_" Multiplicity="0..1" />
-          <End Role="OrderbyShift" Type="Self.OrderbyShift" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Order_" Role="Order_" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.OrderbyShift" Role="OrderbyShift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Order_">
               <PropertyRef Name="id_O" />
@@ -733,8 +946,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Order_by___id_WS__75A278F5">
-          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
-          <End Role="OrderbyShift" Type="Self.OrderbyShift" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Work_Shift" Role="Work_Shift" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.OrderbyShift" Role="OrderbyShift" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Work_Shift">
               <PropertyRef Name="id_WS" />
@@ -745,8 +958,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Paint_Wareh__Id___6383C8BA">
-          <End Role="Paint" Type="Self.Paint" Multiplicity="0..1" />
-          <End Role="Paint_Warehouse" Type="Self.Paint_Warehouse" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Paint" Role="Paint" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Paint_Warehouse" Role="Paint_Warehouse" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Paint">
               <PropertyRef Name="id_P" />
@@ -756,9 +969,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Supply_Pai__id_P__18EBB532">
+          <End Type="Perfomance_ArtistModel.Paint" Role="Paint" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Supply_Paint" Role="Supply_Paint" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Paint">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Supply_Paint">
+              <PropertyRef Name="id_P" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Products_Wa__Id___5DCAEF64">
-          <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
-          <End Role="Products_Warehouse" Type="Self.Products_Warehouse" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Products_Warehouse" Role="Products_Warehouse" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="id_P" />
@@ -768,9 +993,21 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK__Supply_Det__id_D__160F4887">
+          <End Type="Perfomance_ArtistModel.Product" Role="Product" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Supply_Details" Role="Supply_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="id_P" />
+            </Principal>
+            <Dependent Role="Supply_Details">
+              <PropertyRef Name="id_D" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK__Shift_Com__id_WS__71D1E811">
-          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
-          <End Role="Shift_Composition" Type="Self.Shift_Composition" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Work_Shift" Role="Work_Shift" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Shift_Composition" Role="Shift_Composition" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Work_Shift">
               <PropertyRef Name="id_WS" />
@@ -781,8 +1018,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK__Shift_Cos__id_WS__6E01572D">
-          <End Role="Work_Shift" Type="Self.Work_Shift" Multiplicity="0..1" />
-          <End Role="Shift_Costumables" Type="Self.Shift_Costumables" Multiplicity="*" />
+          <End Type="Perfomance_ArtistModel.Work_Shift" Role="Work_Shift" Multiplicity="0..1" />
+          <End Type="Perfomance_ArtistModel.Shift_Costumables" Role="Shift_Costumables" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Work_Shift">
               <PropertyRef Name="id_WS" />
@@ -792,89 +1029,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities_Perfomance_Artist" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Costumables" EntityType="Self.Costumables" />
-          <EntitySet Name="Costumables_Warehouse" EntityType="Self.Costumables_Warehouse" />
-          <EntitySet Name="Employers" EntityType="Self.Employers" />
-          <EntitySet Name="Master_" EntityType="Self.Master_" />
-          <EntitySet Name="Order_" EntityType="Self.Order_" />
-          <EntitySet Name="OrderbyShift" EntityType="Self.OrderbyShift" />
-          <EntitySet Name="Paint" EntityType="Self.Paint" />
-          <EntitySet Name="Paint_Warehouse" EntityType="Self.Paint_Warehouse" />
-          <EntitySet Name="Positions" EntityType="Self.Positions" />
-          <EntitySet Name="Product" EntityType="Self.Product" />
-          <EntitySet Name="Products_Warehouse" EntityType="Self.Products_Warehouse" />
-          <EntitySet Name="Shift_Composition" EntityType="Self.Shift_Composition" />
-          <EntitySet Name="Shift_Costumables" EntityType="Self.Shift_Costumables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-          <EntitySet Name="User_App" EntityType="Self.User_App" />
-          <EntitySet Name="Work_Shift" EntityType="Self.Work_Shift" />
-          <AssociationSet Name="FK__Costumables__Id___60A75C0F" Association="Self.FK__Costumables__Id___60A75C0F">
-            <End Role="Costumables" EntitySet="Costumables" />
-            <End Role="Costumables_Warehouse" EntitySet="Costumables_Warehouse" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Shift_Cost__id_C__6EF57B66" Association="Self.FK__Shift_Cost__id_C__6EF57B66">
-            <End Role="Costumables" EntitySet="Costumables" />
-            <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Employers__Posit__52593CB8" Association="Self.FK__Employers__Posit__52593CB8">
-            <End Role="Positions" EntitySet="Positions" />
-            <End Role="Employers" EntitySet="Employers" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Master___id_E__5535A963" Association="Self.FK__Master___id_E__5535A963">
-            <End Role="Employers" EntitySet="Employers" />
-            <End Role="Master_" EntitySet="Master_" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Shift_Comp__id_E__72C60C4A" Association="Self.FK__Shift_Comp__id_E__72C60C4A">
-            <End Role="Employers" EntitySet="Employers" />
-            <End Role="Shift_Composition" EntitySet="Shift_Composition" />
-          </AssociationSet>
-          <AssociationSet Name="FK__User_App__id_E__7C4F7684" Association="Self.FK__User_App__id_E__7C4F7684">
-            <End Role="Employers" EntitySet="Employers" />
-            <End Role="User_App" EntitySet="User_App" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Order___Master___68487DD7" Association="Self.FK__Order___Master___68487DD7">
-            <End Role="Master_" EntitySet="Master_" />
-            <End Role="Order_" EntitySet="Order_" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Work_Shif__Maste__6B24EA82" Association="Self.FK__Work_Shif__Maste__6B24EA82">
-            <End Role="Master_" EntitySet="Master_" />
-            <End Role="Work_Shift" EntitySet="Work_Shift" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Order___Paint__6754599E" Association="Self.FK__Order___Paint__6754599E">
-            <End Role="Paint" EntitySet="Paint" />
-            <End Role="Order_" EntitySet="Order_" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Order___Product__66603565" Association="Self.FK__Order___Product__66603565">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Order_" EntitySet="Order_" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Order_by_S__id_O__76969D2E" Association="Self.FK__Order_by_S__id_O__76969D2E">
-            <End Role="Order_" EntitySet="Order_" />
-            <End Role="OrderbyShift" EntitySet="OrderbyShift" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Order_by___id_WS__75A278F5" Association="Self.FK__Order_by___id_WS__75A278F5">
-            <End Role="Work_Shift" EntitySet="Work_Shift" />
-            <End Role="OrderbyShift" EntitySet="OrderbyShift" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Paint_Wareh__Id___6383C8BA" Association="Self.FK__Paint_Wareh__Id___6383C8BA">
-            <End Role="Paint" EntitySet="Paint" />
-            <End Role="Paint_Warehouse" EntitySet="Paint_Warehouse" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Products_Wa__Id___5DCAEF64" Association="Self.FK__Products_Wa__Id___5DCAEF64">
-            <End Role="Product" EntitySet="Product" />
-            <End Role="Products_Warehouse" EntitySet="Products_Warehouse" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Shift_Com__id_WS__71D1E811" Association="Self.FK__Shift_Com__id_WS__71D1E811">
-            <End Role="Work_Shift" EntitySet="Work_Shift" />
-            <End Role="Shift_Composition" EntitySet="Shift_Composition" />
-          </AssociationSet>
-          <AssociationSet Name="FK__Shift_Cos__id_WS__6E01572D" Association="Self.FK__Shift_Cos__id_WS__6E01572D">
-            <End Role="Work_Shift" EntitySet="Work_Shift" />
-            <End Role="Shift_Costumables" EntitySet="Shift_Costumables" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -883,158 +1038,185 @@
           <EntitySetMapping Name="Costumables">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Costumables">
               <MappingFragment StoreEntitySet="Costumables">
-                <ScalarProperty Name="id_C" ColumnName="id_C" />
-                <ScalarProperty Name="Name_C" ColumnName="Name_C" />
-                <ScalarProperty Name="Material_C" ColumnName="Material_C" />
                 <ScalarProperty Name="Volume_Amount_C" ColumnName="Volume_Amount_C" />
+                <ScalarProperty Name="Material_C" ColumnName="Material_C" />
+                <ScalarProperty Name="Name_C" ColumnName="Name_C" />
+                <ScalarProperty Name="id_C" ColumnName="id_C" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Costumables_Warehouse">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Costumables_Warehouse">
               <MappingFragment StoreEntitySet="Costumables_Warehouse">
-                <ScalarProperty Name="id_W" ColumnName="id_W" />
-                <ScalarProperty Name="Id_" ColumnName="Id_" />
                 <ScalarProperty Name="Reminder_C" ColumnName="Reminder_C" />
+                <ScalarProperty Name="Id_" ColumnName="Id_" />
+                <ScalarProperty Name="id_W" ColumnName="id_W" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Employers">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Employers">
               <MappingFragment StoreEntitySet="Employers">
-                <ScalarProperty Name="id_E" ColumnName="id_E" />
-                <ScalarProperty Name="Surname_E" ColumnName="Surname_E" />
-                <ScalarProperty Name="Name_E" ColumnName="Name_E" />
-                <ScalarProperty Name="Patronymic_e" ColumnName="Patronymic_e" />
                 <ScalarProperty Name="Position_E" ColumnName="Position_E" />
+                <ScalarProperty Name="Patronymic_e" ColumnName="Patronymic_e" />
+                <ScalarProperty Name="Name_E" ColumnName="Name_E" />
+                <ScalarProperty Name="Surname_E" ColumnName="Surname_E" />
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Master_">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Master_">
               <MappingFragment StoreEntitySet="Master_">
-                <ScalarProperty Name="id_M" ColumnName="id_M" />
-                <ScalarProperty Name="id_E" ColumnName="id_E" />
                 <ScalarProperty Name="Expirience_M" ColumnName="Expirience_M" />
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="id_M" ColumnName="id_M" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Order_">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Order_">
               <MappingFragment StoreEntitySet="Order_">
-                <ScalarProperty Name="id_O" ColumnName="id_O" />
-                <ScalarProperty Name="Product" ColumnName="Product" />
-                <ScalarProperty Name="Paint" ColumnName="Paint" />
-                <ScalarProperty Name="Master_" ColumnName="Master_" />
-                <ScalarProperty Name="Amount_Product" ColumnName="Amount_Product" />
-                <ScalarProperty Name="Total_Area_Value" ColumnName="Total_Area_Value" />
                 <ScalarProperty Name="Tatal_Area" ColumnName="Tatal_Area" />
+                <ScalarProperty Name="Total_Area_Value" ColumnName="Total_Area_Value" />
+                <ScalarProperty Name="Amount_Product" ColumnName="Amount_Product" />
+                <ScalarProperty Name="Master_" ColumnName="Master_" />
+                <ScalarProperty Name="Paint" ColumnName="Paint" />
+                <ScalarProperty Name="Product" ColumnName="Product" />
+                <ScalarProperty Name="id_O" ColumnName="id_O" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderbyShift">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.OrderbyShift">
               <MappingFragment StoreEntitySet="OrderbyShift">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
                 <ScalarProperty Name="id_O" ColumnName="id_O" />
+                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Paint">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Paint">
               <MappingFragment StoreEntitySet="Paint">
-                <ScalarProperty Name="id_P" ColumnName="id_P" />
-                <ScalarProperty Name="Name_Color_P" ColumnName="Name_Color_P" />
-                <ScalarProperty Name="ISO_P" ColumnName="ISO_P" />
                 <ScalarProperty Name="Manufacter" ColumnName="Manufacter" />
+                <ScalarProperty Name="ISO_P" ColumnName="ISO_P" />
+                <ScalarProperty Name="Name_Color_P" ColumnName="Name_Color_P" />
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Paint_Warehouse">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Paint_Warehouse">
               <MappingFragment StoreEntitySet="Paint_Warehouse">
-                <ScalarProperty Name="id_W" ColumnName="id_W" />
-                <ScalarProperty Name="Id_" ColumnName="Id_" />
                 <ScalarProperty Name="Reminder_P" ColumnName="Reminder_P" />
+                <ScalarProperty Name="Id_" ColumnName="Id_" />
+                <ScalarProperty Name="id_W" ColumnName="id_W" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Positions">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Positions">
               <MappingFragment StoreEntitySet="Positions">
-                <ScalarProperty Name="id_P" ColumnName="id_P" />
-                <ScalarProperty Name="Name_P" ColumnName="Name_P" />
                 <ScalarProperty Name="Schedule_P" ColumnName="Schedule_P" />
+                <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Product">
               <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="id_P" ColumnName="id_P" />
-                <ScalarProperty Name="Name_P" ColumnName="Name_P" />
-                <ScalarProperty Name="Sizes_l_w_h_P" ColumnName="Sizes_l_w_h_P" />
-                <ScalarProperty Name="Thickness_P" ColumnName="Thickness_P" />
-                <ScalarProperty Name="Size_Value_P" ColumnName="Size_Value_P" />
                 <ScalarProperty Name="Size_P" ColumnName="Size_P" />
+                <ScalarProperty Name="Size_Value_P" ColumnName="Size_Value_P" />
+                <ScalarProperty Name="Thickness_P" ColumnName="Thickness_P" />
+                <ScalarProperty Name="Sizes_l_w_h_P" ColumnName="Sizes_l_w_h_P" />
+                <ScalarProperty Name="Name_P" ColumnName="Name_P" />
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Products_Warehouse">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Products_Warehouse">
               <MappingFragment StoreEntitySet="Products_Warehouse">
-                <ScalarProperty Name="id_W" ColumnName="id_W" />
-                <ScalarProperty Name="Id_" ColumnName="Id_" />
                 <ScalarProperty Name="Reminder_P" ColumnName="Reminder_P" />
+                <ScalarProperty Name="Id_" ColumnName="Id_" />
+                <ScalarProperty Name="id_W" ColumnName="id_W" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Shift_Composition">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Shift_Composition">
               <MappingFragment StoreEntitySet="Shift_Composition">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
                 <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Shift_Costumables">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Shift_Costumables">
               <MappingFragment StoreEntitySet="Shift_Costumables">
-                <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
                 <ScalarProperty Name="id_C" ColumnName="id_C" />
+                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supply_Costumables">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Supply_Costumables">
+              <MappingFragment StoreEntitySet="Supply_Costumables">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
+                <ScalarProperty Name="id_S" ColumnName="id_S" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supply_Details">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Supply_Details">
+              <MappingFragment StoreEntitySet="Supply_Details">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="id_D" ColumnName="id_D" />
+                <ScalarProperty Name="id_S" ColumnName="id_S" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Supply_Paint">
+            <EntityTypeMapping TypeName="Perfomance_ArtistModel.Supply_Paint">
+              <MappingFragment StoreEntitySet="Supply_Paint">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="id_P" ColumnName="id_P" />
+                <ScalarProperty Name="id_S" ColumnName="id_S" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="User_App">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.User_App">
               <MappingFragment StoreEntitySet="User_App">
-                <ScalarProperty Name="id_U" ColumnName="id_U" />
-                <ScalarProperty Name="id_E" ColumnName="id_E" />
-                <ScalarProperty Name="UserName" ColumnName="UserName" />
                 <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="id_E" ColumnName="id_E" />
+                <ScalarProperty Name="id_U" ColumnName="id_U" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Work_Shift">
             <EntityTypeMapping TypeName="Perfomance_ArtistModel.Work_Shift">
               <MappingFragment StoreEntitySet="Work_Shift">
-                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
-                <ScalarProperty Name="Date_WS" ColumnName="Date_WS" />
                 <ScalarProperty Name="Master_" ColumnName="Master_" />
+                <ScalarProperty Name="Date_WS" ColumnName="Date_WS" />
+                <ScalarProperty Name="id_WS" ColumnName="id_WS" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

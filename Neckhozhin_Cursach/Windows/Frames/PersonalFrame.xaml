@@ -1,0 +1,24 @@
+﻿<Page x:Class="Neckhozhin_Cursach.Windows.Frames.PersonalFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Neckhozhin_Cursach.Windows.Frames"
+      mc:Ignorable="d" 
+      d:DesignHeight="365" d:DesignWidth="360"
+      Title="PersonalFrame">
+
+    <Grid>
+        <Grid VerticalAlignment="Top" Margin="10 50">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding Employers.Surname_E}" Grid.Row="0" FontSize="24"/>
+            <TextBlock Text="{Binding Employers.Name_E}" Grid.Row="1" FontSize="24"/>
+            <TextBlock Text="{Binding Employers.Patronymic_e}" Grid.Row="2" FontSize="24"/>
+        </Grid>
+        <Button x:Name="LogOutBtn" Click="LogOutBtn_Click" Content="Выйти" VerticalAlignment="Bottom" Style="{StaticResource SystemButtonStyle}" HorizontalAlignment="Center" Padding="20 5"/>
+    </Grid>
+</Page>

@@ -38,6 +38,9 @@ namespace Neckhozhin_Cursach.DataBase
         public virtual DbSet<Products_Warehouse> Products_Warehouse { get; set; }
         public virtual DbSet<Shift_Composition> Shift_Composition { get; set; }
         public virtual DbSet<Shift_Costumables> Shift_Costumables { get; set; }
+        public virtual DbSet<Supply_Costumables> Supply_Costumables { get; set; }
+        public virtual DbSet<Supply_Details> Supply_Details { get; set; }
+        public virtual DbSet<Supply_Paint> Supply_Paint { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User_App> User_App { get; set; }
         public virtual DbSet<Work_Shift> Work_Shift { get; set; }

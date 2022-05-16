@@ -17,20 +17,29 @@
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="0.4*" />
             </Grid.RowDefinitions>
-            <Image Grid.Row="0" Source="/Resources/God.jpg"/>
-            <Frame Grid.Row="1" x:Name="PersonalFrame"/>            
+            <StackPanel Grid.Row="0" Orientation="Vertical">
+                <Image  Source="/Resources/unknown.png" Height="100"/>
+                <TextBlock Text="Perfomance Artist" HorizontalAlignment="Center" FontSize="40" TextDecorations="Underline">
+                    <TextBlock.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF19F7B5" Offset="0.565"/>
+                            <GradientStop Color="#FF00BAF9" Offset="0.975"/>
+                        </LinearGradientBrush>
+                    </TextBlock.Foreground>
+                </TextBlock>
+            </StackPanel>            
+            <Frame Grid.Row="1" x:Name="PersonalFrame" NavigationUIVisibility="Hidden"/>            
         </Grid>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.2*" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Orientation="Horizontal">                
+            <StackPanel Grid.Row="0" Orientation="Horizontal" x:Name="MenuPanel">                
                 <Button Height="73" Width="163" x:Name="Employer" Click="Employer_Click" Grid.Column="0" Content="Сотрудники" Style="{StaticResource MenuButtonStyle}"/>
                 <Button Height="73" Width="163" x:Name="Warehouse" Click="Warehouse_Click" Content="Склады" Style="{StaticResource MenuButtonStyle}"/>
                 <Button Height="73" Width="163" x:Name="Order" Content="Заказы" Click="Order_Click" Style="{StaticResource MenuButtonStyle}"/>
                 <Button Height="73" Width="163" x:Name="CreateSupply" Click="CreateSupply_Click" Content="Поставки" Style="{StaticResource MenuButtonStyle}"/>
-                <Button Height="73" Width="163" Content="Test#5" Style="{StaticResource MenuButtonStyle}"/>
             </StackPanel>
             <Frame x:Name="MainFrame" HorizontalAlignment="Left" Grid.Row="1" NavigationUIVisibility="Hidden" x:FieldModifier="public" Height="580" Width="900"/>
         </Grid>

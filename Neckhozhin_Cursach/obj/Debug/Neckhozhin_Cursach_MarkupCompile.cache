@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-O:\Neck_V2\Neckhozhin_Cursach\obj\Debug\
+C:\Users\Привет!\source\repos\Новая папка\Neckhozhin_Cursach\obj\Debug\
 Neckhozhin_Cursach
 none
 false
 DEBUG;TRACE
-O:\Neck_V2\Neckhozhin_Cursach\App.xaml
-131250540732
-2-290982251
-39-1477409882
-18-1262795441
-Windows\Frames\AddEmployerFrame.xaml;Windows\Frames\ConstructorOrderFrame.xaml;Windows\Frames\CreateSupply.xaml;Windows\Frames\Employer.xaml;Windows\Frames\EmployerListFrame.xaml;Windows\Frames\LoginFrame.xaml;Windows\Frames\Order.xaml;Windows\Frames\OrderCompositionFrame.xaml;Windows\Frames\SelectWarehouseFrame.xaml;Windows\Frames\WarehouseCostumablesFrame.xaml;Windows\Frames\WarehouseDetailsFrame.xaml;Windows\Frames\WarehousePaintFrame.xaml;Windows\MainWindow.xaml;
+C:\Users\Привет!\source\repos\Новая папка\Neckhozhin_Cursach\App.xaml
+14-1037793687
+2-1670966889
+44-707849075
+18870809365
+Windows\Frames\AddEmployerFrame.xaml;Windows\Frames\ConstructorOrderFrame.xaml;Windows\Frames\CreateSupply.xaml;Windows\Frames\Employer.xaml;Windows\Frames\EmployerListFrame.xaml;Windows\Frames\LoginFrame.xaml;Windows\Frames\Order.xaml;Windows\Frames\OrderCompositionFrame.xaml;Windows\Frames\PersonalFrame.xaml;Windows\Frames\SelectWarehouseFrame.xaml;Windows\Frames\WarehouseCostumablesFrame.xaml;Windows\Frames\WarehouseDetailsFrame.xaml;Windows\Frames\WarehousePaintFrame.xaml;Windows\MainWindow.xaml;
 
 False
 

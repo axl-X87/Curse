@@ -18,7 +18,7 @@
                 <ComboBoxItem Content="Расходные материалы"/>
             </ComboBox>
             <TextBlock Text="Введите название:" Style="{StaticResource TextBlStyle}" Margin="10 5"/>
-            <TextBox Style="{StaticResource TextBxStyle}" x:Name="NameTbx" Width="250" HorizontalAlignment="Left" Margin="10 20"/>
+            <ComboBox x:Name="NameCb" Width="250" HorizontalAlignment="Left" Margin="10 20"/>
             <TextBlock Text="Выберите количество:" Style="{StaticResource TextBlStyle}" Margin="10 5"/>
             <TextBox Style="{StaticResource TextBxStyle}" x:Name="CountTbx" Width="150" HorizontalAlignment="Left" Margin="10 20"/>
             <TextBlock Style="{StaticResource TextBlStyle}" Text="Test Count Remains" x:Name="RemainsTbl" Margin="10 10"/>
