@@ -45,6 +45,7 @@ namespace Neckhozhin_Cursach.Windows.Frames
                 emp.Position_E = (Convert.ToInt32(EmployeePositionCB.SelectedIndex) + 1);
                 DataBaseConnection.entities.Employers.Add(emp);
                 DataBaseConnection.entities.SaveChanges();
+                MessageBox.Show("Сотрудник успешно добавлен", "Сообщение", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             catch (Exception)
             {

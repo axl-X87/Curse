@@ -33,7 +33,7 @@
             </Grid.RowDefinitions>
             <TextBlock Text="Внести сотрудника" VerticalAlignment="Center" Style="{StaticResource TextBlTitleStyle}" Grid.Row="0"/>
             <TextBlock Text="Перейти на страницу для ввода сотрудника в систему" Grid.Row="1" VerticalAlignment="Center" TextWrapping="Wrap" Style="{StaticResource TextBlStyle}"/>
-            <Button x:Name="AddEmployerBtn" Content="Список сотрудников" Click="AddEmployerBtn_Click" Style="{StaticResource SystemButtonStyle}" Grid.Row="2" HorizontalAlignment="Center"/>
+            <Button x:Name="AddEmployerBtn" Content="Ввести сотрудника" Click="AddEmployerBtn_Click" Style="{StaticResource SystemButtonStyle}" Grid.Row="2" HorizontalAlignment="Center"/>
         </Grid>
     </Grid>
 </Page>

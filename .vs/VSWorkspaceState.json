@@ -1,5 +1,8 @@
 {
-  "ExpandedNodes": [],
-  "SelectedNode": "\\Neckhozhin_Cursach.sln (Neckhozhin_Cursach.sln)",
+  "ExpandedNodes": [
+    "",
+    "\\Neckhozhin_Cursach"
+  ],
+  "SelectedNode": "\\Neckhozhin_Cursach\\Neckhozhin_Cursach.csproj",
   "PreviewInSolutionExplorer": false
 }
